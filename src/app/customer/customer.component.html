@@ -1,0 +1,47 @@
+<div>
+  <button><a  [routerLink]="['/create']"> Nouveau client </a></button>
+</div>
+<div class="container custom-container-2">
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Customers.length == 0">
+      <p> Il y a aucun clients .</p>
+      <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
+        Add Empoyee
+      </button> -->
+    </div>
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Customers.length !== 0">
+      <h3 class="mb-3 text-center">Liste Client</h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"> Id customer </th>
+              <th scope="col">Name</th>
+              <th scope="col">vat</th>
+              <th scope="col">Adresse</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telephone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of Customers">
+              <td>{{ customer.id_customer}}</td>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.vat}}</td>
+              <td>{{ customer.adress}}</td>
+              <td>{{ customer.email }}</td>
+              <td>{{ customer.phoneNumber }}</td>
+              <td>
+                <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
+                  >Edit
+                </span> -->
+                  <button type="button" (click)='deleteCustomer(customer.id_customer)'> Supprimer </button>
+                  <button><a  [routerLink]="['/customer/',customer.id_customer]" [queryParams]="{ idc:customer.id_customer }">Détail Client</a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

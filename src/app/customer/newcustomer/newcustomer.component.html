@@ -1,0 +1,21 @@
+<h1>Nouveau Client</h1>
+<form *ngIf="customerForm" [formGroup]=" customerForm"  (ngSubmit)="createCustomer()">
+
+    <label for="name"> Nom: </label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="vat"> Tva: </label>
+    <input id="vat" type="text" formControlName="vat">
+
+    <label for="adress"> Adresse :  </label>
+    <input id="adress" type="text" formControlName="adress">
+  
+    <label for="email"> Email: </label>
+    <input id="email" type="text" formControlName="email">
+
+    <label for="phoneNumber"> Numero téléphone: </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+    
+    <button type="submit">Submit</button>
+    
+</form>

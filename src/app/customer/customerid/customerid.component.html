@@ -1,0 +1,53 @@
+
+<mat-card *ngIf="customer" class="example-card" id="customerDetail">
+    <mat-card-title> <h1> Client details </h1> </mat-card-title>
+    <mat-card-subtitle> {{ customer.id_customer }} </mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <h3> Nom :  </h3>
+            <p>{{ customer.name }}</p>  
+        </div>
+        <div>
+            <h3> Adresse :  </h3>
+            <p>{{ customer.adress }}</p>  
+        </div>
+        <div>
+            <h3> Numéro Tva :  </h3>
+            <p>{{ customer.vat }}</p>  
+        </div>
+        <div>
+            <h3> Email :  </h3>
+            <p>{{ customer.email }}</p>  
+        </div>
+        <div>
+            <h3> Téléhpone :  </h3>
+            <p>{{ customer.phoneNumber }}</p>  
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="createPdf()" > Génerer un PDF </button>
+        <button mat-button > <a [routerLink]="['/customer']">Retour</a></button>
+    </mat-card-actions>
+</mat-card>
+
+<h1> Modifier les détails </h1>
+<form [formGroup]="updateCustomerForm"  (ngSubmit)="updateCustomer()">
+
+    <label for="name"> Nom: </label>
+    <input id="name" type="text" formControlName="name" >
+  
+    <label for="vat"> Tva: </label>
+    <input id="vat" type="text" formControlName="vat" >
+
+    <label for="adress"> Adresse :  </label>
+    <input id="adress" type="text" formControlName="adress" >
+  
+    <label for="email"> Email: </label>
+    <input id="email" type="text" formControlName="email" >
+
+    <label for="phoneNumber"> Numero téléphone: </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" >
+    
+    <button type="submit">Submit</button>
+    
+</form>
