@@ -14,6 +14,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { TokenInterceptor } from './token.interceptor';
 import { NewcustomerComponent } from './customer/newcustomer/newcustomer.component';
 import {MatCardModule} from '@angular/material/card';
+import { DeliveryComponent } from './delivery/delivery.component';
+import { DriverComponent } from './driver/driver.component';
+import { TransporterComponent } from './transporter/transporter.component';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import {MatCardModule} from '@angular/material/card';
     CustomerComponent,
     CustomeridComponent,
     NewcustomerComponent,
+    DeliveryComponent,
+    DriverComponent,
+    TransporterComponent,
+ 
   ],
   imports: [
     BrowserModule,

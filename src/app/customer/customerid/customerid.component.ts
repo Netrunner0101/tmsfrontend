@@ -21,8 +21,7 @@ export class CustomeridComponent implements OnInit {
   // Empty customer object.
   customer = <Customer>{};
 
- // Update details
-  
+ // Initial formgroup
   updateCustomerForm= new FormGroup({
     name : new FormControl(''),
     vat : new FormControl(''),
@@ -41,6 +40,7 @@ export class CustomeridComponent implements OnInit {
         console.log("Variable IDC = ", this.idc );
         this.getCustomerById(this.idc);
         this.idcustomer = this.idc;
+
       }
     )
     
@@ -52,13 +52,20 @@ export class CustomeridComponent implements OnInit {
         console.log(data);
         this.customer = data;
 
-        // this.updateCustomerForm.setValue({
-        //   name : this.customer.name,
-        //   vat : this.customer.vat,
-        //   adress : this.customer.adress,
-        //   email : this.customer.email,
-        //   phoneNumber : this.customer.phoneNumber,
-        // })
+        // To set initial value must be inside the subscribe function
+        // Update details
+        this.updateCustomerForm.patchValue({
+          name: this.customer.name,
+          
+          vat : this.customer.vat,
+
+          adress : this.customer.adress,
+
+          email : this.customer.email,
+
+          phoneNumber : this.customer.phoneNumber,
+
+        })
 
         return this.customer;
     })
