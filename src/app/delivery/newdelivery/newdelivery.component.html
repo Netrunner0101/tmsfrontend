@@ -1,0 +1,24 @@
+<h1>Nouvelle Livraison</h1>
+<form *ngIf="deliveryForm" [formGroup]="deliveryForm"  (ngSubmit)=" createDelivery()">
+
+    <label for="numeroDelivery"> Numero de livraison: </label>
+    <input id="numeroDelivery" type="text" formControlName="numeroDelivery">
+  
+    <label for="weight"> Poids: </label>
+    <input id="weight" type="number" formControlName="weight">
+
+    <label for="adress"> Adresse :  </label>
+    <input id="adress" type="text" formControlName="adress">
+  
+    <label for="dateTransfert"> Date de transfert : </label>
+    <input id="dateTransfert" type="date" class="form-control" formControlName="dateTransfert" />
+
+    <label for="dateDelivery"> Date de livraison : </label>
+    <input id="dateDelivery" type="date" class="form-control" formControlName="dateDelivery" />
+
+    <label for="remarks"> Remarque: </label>
+    <input id="remarks" type="text" formControlName="remarks">
+
+    <button type="submit">Submit</button>
+    
+</form>

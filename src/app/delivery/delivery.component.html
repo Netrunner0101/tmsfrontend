@@ -1,1 +1,48 @@
-<p>delivery works!</p>
+<div>
+    <button><a  [routerLink]="['/create/delivery']"> Créer une nouvelle Livraison </a></button>
+  </div>
+  <div class="container custom-container-2">
+      <!-- Show it when there is no employee -->
+      <div class="no-data text-center" *ngIf="Delivery.length == 0">
+        <p> Il y a aucune livraison .</p>
+        <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
+          Add Empoyee
+        </button> -->
+      </div>
+      <!-- Employees list table, it hides when there is no employee -->
+      <div *ngIf="Delivery.length !== 0">
+        <h3 class="mb-3 text-center">Liste des livraisons </h3>
+        <div class="col-md-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col"> Id Livraison </th>
+                <th scope="col"> Numero </th>
+                <th scope="col"> Poids (Kg) </th>
+                <th scope="col"> Date de transfert </th>
+                <th scope="col"> Date de livraison </th>
+                <th scope="col"> Commentaire </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let deli of Delivery">
+                <td>{{ deli.id_delivery}}</td>
+                <td>{{ deli.numeroDelivery }}</td>
+                <td>{{ deli.weight}}</td>
+                <td>{{ deli.dateTransfert | date:'M/d/yy' }}</td>
+                <td>{{ deli.dateDelivery | date:'M/d/yy' }}</td>
+                <td>{{ deli.remarks }}</td>
+                <td>
+                  <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
+                    >Edit
+                  </span> -->
+                    <!-- <button type="button" (click)='deleteCustomer(customer.id_customer)'> Supprimer </button> -->
+                    <button><a  [routerLink]="['/delivery/',deli.id_delivery]" [queryParams]="{ iddelivery:deli.id_delivery }"> Détail de la livraison </a></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  

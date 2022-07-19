@@ -17,6 +17,8 @@ import {MatCardModule} from '@angular/material/card';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { DriverComponent } from './driver/driver.component';
 import { TransporterComponent } from './transporter/transporter.component';
+import { NewdeliveryComponent } from './delivery/newdelivery/newdelivery.component';
+import { DeliveryidComponent } from './delivery/deliveryid/deliveryid.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { TransporterComponent } from './transporter/transporter.component';
     DeliveryComponent,
     DriverComponent,
     TransporterComponent,
+    NewdeliveryComponent,
+    DeliveryidComponent,
  
   ],
   imports: [
