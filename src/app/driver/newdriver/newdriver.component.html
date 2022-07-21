@@ -1,0 +1,15 @@
+<h1>Ajout d'un nouveau chauffeur</h1>
+<form *ngIf="driverForm" [formGroup]="driverForm"  (ngSubmit)=" createDriver()">
+
+    <label for="name">  Nom du chauffeur  </label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="email"> Email du chauffeur : </label>
+    <input id="email" type="text" formControlName="email">
+
+    <label for="phoneNumber">  Numéro de téléphone du chauffeur  :  </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+
+    <button type="submit">Submit</button>
+    
+</form>

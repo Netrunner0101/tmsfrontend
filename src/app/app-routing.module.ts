@@ -7,6 +7,8 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { DeliveryidComponent } from './delivery/deliveryid/deliveryid.component';
 import { NewdeliveryComponent } from './delivery/newdelivery/newdelivery.component';
 import { DriverComponent } from './driver/driver.component';
+import { IddriverComponent } from './driver/iddriver/iddriver.component';
+import { NewdriverComponent } from './driver/newdriver/newdriver.component';
 import { LoginComponent } from './login/login.component';
 import { IdtransporterComponent } from './transporter/idtransporter/idtransporter.component';
 import { NewtransporterComponent } from './transporter/newtransporter/newtransporter.component';
@@ -14,7 +16,7 @@ import { TransporterComponent } from './transporter/transporter.component';
 
 const routes: Routes = [
   
-  { path:'driver' , component: DriverComponent },
+  
   // Route Login
   { path:'login' , component: LoginComponent },
   // Client route
@@ -30,6 +32,10 @@ const routes: Routes = [
   { path:'transporter' , component: TransporterComponent },
   { path:'create/transporter' , component: NewtransporterComponent },
   { path:'transporter/:idt' , component: IdtransporterComponent },
+  // Driver Route
+  { path:'driver' , component: DriverComponent },
+  { path:'create/driver' , component: NewdriverComponent },
+  { path:'driver/:iddriver' , component: IddriverComponent },
 
 ];
 

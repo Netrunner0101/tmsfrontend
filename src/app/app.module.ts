@@ -21,6 +21,8 @@ import { NewdeliveryComponent } from './delivery/newdelivery/newdelivery.compone
 import { DeliveryidComponent } from './delivery/deliveryid/deliveryid.component';
 import { NewtransporterComponent } from './transporter/newtransporter/newtransporter.component';
 import { IdtransporterComponent } from './transporter/idtransporter/idtransporter.component';
+import { NewdriverComponent } from './driver/newdriver/newdriver.component';
+import { IddriverComponent } from './driver/iddriver/iddriver.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { IdtransporterComponent } from './transporter/idtransporter/idtransporte
     DeliveryidComponent,
     NewtransporterComponent,
     IdtransporterComponent,
+    NewdriverComponent,
+    IddriverComponent,
  
   ],
   imports: [
