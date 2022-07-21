@@ -30,15 +30,7 @@ export class CustomerComponent implements OnInit {
 
   // If Problem look at back end because could be at the response Ok
   deleteCustomer(idc:any){
-    this._customerService.deleteCustomer(idc).subscribe(
-      (r)=>{
-        console.log("delete success",r);
-        location.reload();
-      },
-      (error)=>{
-        console.log(error);
-      }
-    )
+    this._customerService.deleteCustomer(idc);
   }
 
 }

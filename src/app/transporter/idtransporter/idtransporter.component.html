@@ -1,0 +1,45 @@
+<mat-card *ngIf="transporter" class="example-card" id="transporterDetail">
+    <mat-card-title> <h1> Details Transporteur </h1> </mat-card-title>
+    <mat-card-subtitle> {{ transporter.id_transporter }} </mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <h3> Nom du transpoteur :  </h3>
+            <p>{{ transporter.name }}</p>  
+        </div>
+        <div>
+            <h3> Adresse du transporteur : </h3>
+            <p>{{ transporter.adress }}</p>  
+        </div>
+        <div>
+            <h3> Email du transporteur :  </h3>
+            <p>{{ transporter.email }}</p>  
+        </div>
+        <div>
+            <h3> Numéro de contact :  </h3>
+            <p>{{ transporter.phoneNumber }}</p>  
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
+        <button mat-button > <a [routerLink]="['/transporter']"> Retour </a></button>
+    </mat-card-actions>
+</mat-card>
+
+<h1> Modifier les détails du transporter.</h1>
+<form [formGroup]="updateTransporterForm"  (ngSubmit)="updateTransporter()">
+
+    <label for="name">  Nom du transpoteur : </label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="adress"> Adresse du transporteur : </label>
+    <input id="adress" type="text" formControlName="adress">
+
+    <label for="email"> Email du transporteur :   </label>
+    <input id="email" type="text" formControlName="email">
+  
+    <label for="phoneNumber">  Numéro de contact : </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" />
+
+    <button type="submit">Submit</button>
+
+</form>

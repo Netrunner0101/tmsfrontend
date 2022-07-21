@@ -1,11 +1,7 @@
 export interface Transporter {
-    id_transporter: undefined | number,
-    
-    name: undefined | string,
-    
-    adress: undefined | string,
-    
-    email: undefined | string,
-    
-    phoneNumber: undefined | string,
+    id_transporter : number,
+    name : string ,
+    adress : string ,
+    email : string ,
+    phoneNumber : string ,
 }

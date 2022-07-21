@@ -40,10 +40,8 @@ export class CustomeridComponent implements OnInit {
         console.log("Variable IDC = ", this.idc );
         this.getCustomerById(this.idc);
         this.idcustomer = this.idc;
-
       }
     )
-    
   }
 
   public getCustomerById(idc:number){

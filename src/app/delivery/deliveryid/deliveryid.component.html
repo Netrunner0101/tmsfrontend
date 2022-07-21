@@ -1,1 +1,60 @@
-<p>deliveryid works!</p>
+
+<mat-card *ngIf="delivery" class="example-card" id="deliveryDetail">
+    <mat-card-title> <h1> Details Livraison </h1> </mat-card-title>
+    <mat-card-subtitle> {{ delivery.id_delivery }} </mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <h3> Numero de livraison :  </h3>
+            <p>{{ delivery.numeroDelivery }}</p>  
+        </div>
+        <div>
+            <h3> Adresse de livraison :  </h3>
+            <p>{{ delivery.adress }}</p>  
+        </div>
+        <div>
+            <h3> Poids (Kg)  :  </h3>
+            <p>{{ delivery.weight }}</p>  
+        </div>
+        <div>
+            <h3> Date de transfert :  </h3>
+            <p>{{ delivery.dateTransfert | date:'MM/dd/yy' }}</p>  
+        </div>
+        <div>
+            <h3> Date de livraison  :  </h3>
+            <p>{{ delivery.dateDelivery | date:'MM/dd/yy' }}</p>  
+        </div>
+        <div>
+            <h3> Commentaire  :  </h3>
+            <p>{{ delivery.remarks }}</p>  
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="createPdf()" > Génerer un PDF </button>
+        <button mat-button > <a [routerLink]="['/delivery']">Retour</a></button>
+    </mat-card-actions>
+</mat-card>
+
+<h1> Modifier les détails de livraison </h1>
+<form [formGroup]="updateDeliveryForm"  (ngSubmit)="updateDelivery()">
+    
+    <label for="numeroDelivery"> Numero de livraison: </label>
+    <input id="numeroDelivery" type="text" formControlName="numeroDelivery">
+  
+    <label for="weight"> Poids: </label>
+    <input id="weight" type="number" formControlName="weight">
+
+    <label for="adress"> Adresse :  </label>
+    <input id="adress" type="text" formControlName="adress">
+  
+    <label for="dateTransfert"> Date de transfert : </label>
+    <input id="dateTransfert" type="date" class="form-control" formControlName="dateTransfert" />
+
+    <label for="dateDelivery"> Date de livraison : </label>
+    <input id="dateDelivery" type="date" class="form-control" formControlName="dateDelivery" />
+
+    <label for="remarks"> Remarque: </label>
+    <input id="remarks" type="text" formControlName="remarks">
+
+    <button type="submit">Submit</button>
+
+</form>

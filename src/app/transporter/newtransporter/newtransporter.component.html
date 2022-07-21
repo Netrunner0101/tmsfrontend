@@ -1,0 +1,17 @@
+<h1>Nouveau Transporteur</h1>
+<form *ngIf="transporterForm" [formGroup]="transporterForm"  (ngSubmit)=" createTransporter()">
+    <label for="name"> Nom du transporteur : </label>
+    <input id="name" type="text" formControlName="name">
+  
+    <label for="adress"> Adresse du transporteur : </label>
+    <input id="adress" type="text" formControlName="adress">
+
+    <label for="email"> email :  </label>
+    <input id="email" type="text" formControlName="email">
+  
+    <label for="phoneNumber"> Numéro de contact : </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" />
+
+    <button type="submit">Submit</button>
+    
+</form>

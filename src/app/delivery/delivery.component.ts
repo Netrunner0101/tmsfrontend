@@ -25,4 +25,12 @@ export class DeliveryComponent implements OnInit {
     })
   }
 
+  deleteDelivery(idd:any){
+    this._deliveryService.delete(idd).subscribe(
+      (r) => {
+        console.log("Delete delivery sucess");
+      }
+    )
+  }
+
 }

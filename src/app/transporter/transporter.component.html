@@ -1,1 +1,39 @@
-<p>transporter works!</p>
+<div>
+    <button><a  [routerLink]="['/create/transporter']"> Ajouter un nouveau transporteur </a></button>
+</div>
+  <div class="container custom-container-2">
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Transporters.length == 0">
+      <p> Il y a aucun Transporteur .</p>
+    </div>
+    <div *ngIf="Transporters.length !== 0">
+      <h3 class="mb-3 text-center">Liste des Transporteurs </h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"> Id Livraison </th>
+              <th scope="col"> Nom du transpoteur : </th>
+              <th scope="col"> Adresse du transporteur : </th>
+              <th scope="col"> Email du transporteur : </th>
+              <th scope="col"> Numéro de téléphone : </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trans of Transporters">
+              <td>{{ trans.id_transporter }}</td>
+              <td>{{ trans.name }}</td>
+              <td>{{ trans.adress }}</td>
+              <td>{{ trans.email }}</td>
+              <td>{{ trans.phoneNumber }}</td>
+              <td>
+                  <button type="button" (click)='deleteTransporter(trans.id_transporter)'> Supprimer </button>
+                  <button><a  [routerLink]="['/transporter/',trans.id_transporter]" [queryParams]="{ idt:trans.id_transporter }"> Détail du transporteur </a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

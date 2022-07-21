@@ -28,8 +28,8 @@ export class TransporterService {
     );
   }
 
-  update(transporter:any,idtransporter:any){
-    this._http.put(this.url+'/tms/transporter/update/'+idtransporter,transporter).subscribe(
+  update(transporter:any,idtrans:any){
+    this._http.put(this.url+'/tms/transporter/update/'+idtrans,transporter).subscribe(
       (data:any) =>{
         console.log(data)
         location.reload();
@@ -37,8 +37,8 @@ export class TransporterService {
     );
   }
 
-  delete(idtransporter:any):Observable<any>{
-    return this._http.delete(this.url+'/tms/transporter/delete/'+idtransporter);
+  delete(idtrans:any):Observable<any>{
+    return this._http.delete(this.url+'/tms/delete/transporter/'+idtrans);
   }
 
 }
