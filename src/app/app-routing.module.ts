@@ -10,13 +10,15 @@ import { DriverComponent } from './driver/driver.component';
 import { IddriverComponent } from './driver/iddriver/iddriver.component';
 import { NewdriverComponent } from './driver/newdriver/newdriver.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 import { IdtransporterComponent } from './transporter/idtransporter/idtransporter.component';
 import { NewtransporterComponent } from './transporter/newtransporter/newtransporter.component';
 import { TransporterComponent } from './transporter/transporter.component';
 
 const routes: Routes = [
   
-  
+  // Route register
+  { path:'register' , component: RegisterComponent },
   // Route Login
   { path:'login' , component: LoginComponent },
   // Client route

@@ -23,6 +23,7 @@ import { NewtransporterComponent } from './transporter/newtransporter/newtranspo
 import { IdtransporterComponent } from './transporter/idtransporter/idtransporter.component';
 import { NewdriverComponent } from './driver/newdriver/newdriver.component';
 import { IddriverComponent } from './driver/iddriver/iddriver.component';
+import { RegisterComponent } from './login/register/register.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { IddriverComponent } from './driver/iddriver/iddriver.component';
     IdtransporterComponent,
     NewdriverComponent,
     IddriverComponent,
+    RegisterComponent,
  
   ],
   imports: [
