@@ -24,6 +24,8 @@ import { IdtransporterComponent } from './transporter/idtransporter/idtransporte
 import { NewdriverComponent } from './driver/newdriver/newdriver.component';
 import { IddriverComponent } from './driver/iddriver/iddriver.component';
 import { RegisterComponent } from './login/register/register.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { RegisterComponent } from './login/register/register.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}
