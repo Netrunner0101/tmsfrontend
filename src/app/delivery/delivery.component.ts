@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { Delivery } from '../model/delivery.model';
 import { DeliveryService } from '../service/delivery.service';
+
 
 @Component({
   selector: 'app-delivery',
@@ -10,6 +13,8 @@ import { DeliveryService } from '../service/delivery.service';
 export class DeliveryComponent implements OnInit {
 
   Delivery:any = [];
+  
+  // DeliveryDataSource: Delivery[] = []
 
   constructor(private _deliveryService:DeliveryService, private _router : Router) { }
 

@@ -9,7 +9,6 @@
       Add Empoyee
     </button> -->
   </div>
-  <!-- Employees list table, it hides when there is no employee -->
   <div *ngIf="Delivery.length !== 0">
     <h3 class="mb-3 text-center">Liste des livraisons </h3>
     <div class="col-md-12">
@@ -35,9 +34,6 @@
             <td>{{ deli.dateDelivery | date:'M/d/yy' }}</td>
             <td>{{ deli.remarks }}</td>
             <td>
-              <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
-                >Edit
-              </span> -->
                 <button type="button" (click)='deleteDelivery(deli.id_delivery)'> Supprimer </button>
                 <button><a  [routerLink]="['/delivery/',deli.id_delivery]" [queryParams]="{ idd:deli.id_delivery }"> Détail de la livraison </a></button>
             </td>

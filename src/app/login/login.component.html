@@ -1,13 +1,28 @@
 <form *ngIf="userForm" [formGroup]="userForm"  (ngSubmit)="login()">
 
+    <mat-form-field class="email">
+        <mat-label for="email" > Email:</mat-label>
+        <input matInput placeholder="Email" id="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="password">
+        <mat-label  for="password" > mot de passe :</mat-label>
+        <input matInput placeholder="mot de passe" id="password" formControlName="password" />
+    </mat-form-field>
+
+<!-- 
     <label for="email"> Email: </label>
     <input id="email" type="text" formControlName="email">
   
     <label for="password">Password: </label>
-    <input id="password" type="text" formControlName="password">
+    <input id="password" type="text" formControlName="password"> -->
     
-    <button type="submit">Submit</button>
-    
+    <!-- <button type="submit">Submit</button> -->
+
+    <div class="button-wrapper">
+        <button mat-flat-button color="primary">Submit</button>
+    </div>
 </form>
 
-<button type="submit" (click)="logout()"> Deconnection </button>
+<button type="submit" (click)="logout()" > Deconnection </button>
+<button > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>

@@ -26,6 +26,18 @@ import { IddriverComponent } from './driver/iddriver/iddriver.component';
 import { RegisterComponent } from './login/register/register.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { CreatebonComponent } from './createbon/createbon.component';
+// Grid list
+import { MatGridListModule } from '@angular/material/grid-list'; 
+// Data table Material
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSortModule} from '@angular/material/sort';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { BondetailsComponent } from './createbon/bondetails/bondetails.component';
+
 
 
 @NgModule({
@@ -45,7 +57,9 @@ import {MatListModule} from '@angular/material/list';
     NewdriverComponent,
     IddriverComponent,
     RegisterComponent,
- 
+    CreatebonComponent,
+    BondetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,10 +68,18 @@ import {MatListModule} from '@angular/material/list';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    DragDropModule,
+    MatGridListModule,
     MatToolbarModule,
     MatCardModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatPaginatorModule,
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}
