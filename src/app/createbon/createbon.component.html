@@ -3,7 +3,6 @@
 <div class="maincontainer" cdkDropListGroup>
 
     <!-- Liste Initialiser -->
-    <h1> Liste de livraison </h1>
     <div class="deliverylist"
         cdkDropList 
         #deliveriesList="cdkDropList"
@@ -11,6 +10,7 @@
         [cdkDropListConnectedTo]="[creationDelList]"
         (cdkDropListDropped)="drop($event)"
     >
+        <h1> Liste de livraison </h1>
         <div class="deliveryitem" 
             *ngFor="let delivery of Deliveries" 
             cdkDrag 
@@ -21,8 +21,6 @@
         </div>
     </div>
     
-
-    <h1> Liste de chauffeur </h1>
     <div class="transporterlist" 
         cdkDropList
         #transportersList="cdkDropList"
@@ -30,6 +28,7 @@
         [cdkDropListConnectedTo]="[creationTransList]"
         (cdkDropListDropped)="drop($event)"
     >
+        <h1> Liste de chauffeur </h1>
         <div class="transporteritem" 
             *ngFor="let transport of Transporters"
             cdkDrag
@@ -41,12 +40,12 @@
 
     <mat-card class="bon_card">
         <mat-card-header>
-          <mat-card-title> Creation container </mat-card-title>
+          <mat-card-title> Creation du PDF </mat-card-title>
           <mat-card-subtitle> Ajouter les informations. </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>   
             <!-- Liste Création d'un bon de livraison -->
-            <div class="mainContainer">
+            <div class="mainCreateContainer">
                 <!-- <h1> Creation container </h1>
                 <h3> Ajouter les informations. </h3> -->
                 <div class="createContainer">

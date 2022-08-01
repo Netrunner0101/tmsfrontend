@@ -1,6 +1,4 @@
-<div>
-  <button><a  [routerLink]="['/create/delivery']"> Créer une nouvelle Livraison </a></button>
-</div>
+
 <div class="container custom-container-2">
   <!-- Show it when there is no employee -->
   <div class="no-data text-center" *ngIf="Delivery.length == 0">
@@ -10,7 +8,7 @@
     </button> -->
   </div>
   <div *ngIf="Delivery.length !== 0">
-    <h3 class="mb-3 text-center">Liste des livraisons </h3>
+    <h1 class="mb-3 text-center">Liste des livraisons </h1>
     <div class="col-md-12">
       <table class="table table-bordered">
         <thead>
@@ -42,4 +40,8 @@
       </table>
     </div>
   </div>
+</div>
+
+<div>
+  <button><a  [routerLink]="['/create/delivery']"> Créer une nouvelle Livraison </a></button>
 </div>

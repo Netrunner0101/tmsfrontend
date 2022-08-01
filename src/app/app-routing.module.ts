@@ -48,7 +48,7 @@ const routes: Routes = [
 
   // Create Bon Livraison Route
   { path:'createbon' , component: CreatebonComponent },
-  // { path:'detailsbon/itemTrans/itemDel' , component: BondetailsComponent },
+  // { path:'detailsbon/' , component: BondetailsComponent },
   { path:'detailsbon/:idd/:idt' , component: BondetailsComponent },
 
 ];
