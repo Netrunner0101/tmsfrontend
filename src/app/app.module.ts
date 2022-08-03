@@ -39,7 +39,6 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BondetailsComponent } from './createbon/bondetails/bondetails.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +78,7 @@ import { BondetailsComponent } from './createbon/bondetails/bondetails.component
     MatProgressSpinnerModule,
     MatInputModule,
     MatPaginatorModule,
-
+    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}

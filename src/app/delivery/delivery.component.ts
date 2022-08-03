@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Delivery } from '../model/delivery.model';
 import { DeliveryService } from '../service/delivery.service';
+import * as FileSaver from 'file-saver';
 
 
 @Component({
@@ -37,5 +38,25 @@ export class DeliveryComponent implements OnInit {
       }
     )
   }
+
+  exportExcel() {
+    if (this.Delivery.length > 0) {
+      import("xlsx").then(xlsx => {
+        const worksheet = xlsx.utils.json_to_sheet(this.Delivery);
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
+        this.saveAsExcelFile(excelBuffer, "delivery");
+      });
+    }
+  }
+  saveAsExcelFile(buffer: any, fileName: string): void {
+    let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+    let EXCEL_EXTENSION = '.xlsx';
+    const data: Blob = new Blob([buffer], {
+      type: EXCEL_TYPE
+    });
+    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+  }
+  
 
 }

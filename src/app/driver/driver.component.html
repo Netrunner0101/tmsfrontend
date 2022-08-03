@@ -30,8 +30,8 @@
               <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
                 >Edit
               </span> -->
-                <button type="button" (click)='deleteDriver(driver.id_drive)'> Supprimer </button>
-                <button><a  [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"> Détail de la livraison </a></button>
+                <button type="button" mat-button (click)='deleteDriver(driver.id_drive)'> Supprimer </button>
+                <button mat-button><a  [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"> Détail de la livraison </a></button>
             </td>
           </tr>
         </tbody>
@@ -41,6 +41,7 @@
 </div>
 
 <div>
-  <button><a  [routerLink]="['/create/driver']"> Ajouter un nouveau chauffeur </a></button>
+  <button mat-button><a  [routerLink]="['/create/driver']"> Ajouter un nouveau chauffeur </a></button>
+  <button mat-button (click)="exportExcel()" > Générer un Excel </button>
 </div>
-  
+   
