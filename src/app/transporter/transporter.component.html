@@ -25,8 +25,8 @@
             <td>{{ trans.email }}</td>
             <td>{{ trans.phoneNumber }}</td>
             <td>
-                <button type="button" (click)='deleteTransporter(trans.id_transporter)'> Supprimer </button>
-                <button><a  [routerLink]="['/transporter/',trans.id_transporter]" [queryParams]="{ idt:trans.id_transporter }"> Détail du transporteur </a></button>
+                <button type="button" mat-button (click)='deleteTransporter(trans.id_transporter)'> Supprimer </button>
+                <button mat-button><a  [routerLink]="['/transporter/',trans.id_transporter]" [queryParams]="{ idt:trans.id_transporter }"> Détail du transporteur </a></button>
             </td>
           </tr>
         </tbody>
@@ -36,5 +36,6 @@
 </div>
 
 <div>
-  <button><a  [routerLink]="['/create/transporter']"> Ajouter un nouveau transporteur </a></button>
+  <button mat-button><a  [routerLink]="['/create/transporter']"> Ajouter un nouveau transporteur </a></button>
+  <button mat-button (click)="exportExcel()" > Générer un Excel </button>
 </div>

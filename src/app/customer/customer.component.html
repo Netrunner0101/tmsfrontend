@@ -34,8 +34,8 @@
               <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
                 >Edit
               </span> -->
-                <button type="button" (click)='deleteCustomer(customer.id_customer)'> Supprimer </button>
-                <button><a  [routerLink]="['/customer/',customer.id_customer]" [queryParams]="{ idc:customer.id_customer }">Détail Client</a></button>
+                <button type="button" mat-button (click)='deleteCustomer(customer.id_customer)'> Supprimer </button>
+                <button mat-button><a  [routerLink]="['/customer/',customer.id_customer]" [queryParams]="{ idc:customer.id_customer }">Détail Client</a></button>
             </td>
           </tr>
         </tbody>
@@ -45,5 +45,6 @@
 </div>
 
 <div>
-  <button><a  [routerLink]="['/create/customer']"> Nouveau client </a></button>
+  <button mat-button><a  [routerLink]="['/create/customer']"> Nouveau client </a></button>
+  <button mat-button (click)="exportExcel()" > Générer un Excel </button>
 </div>
