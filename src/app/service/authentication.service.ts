@@ -18,11 +18,13 @@ export class AuthenticationService {
   //  Everything all in service Package
   // 
 
+  // Don't forget to change the interceptor
   login(user:any){
     this.http.post(this.url+'/tms/login',user).subscribe(
       (data:any) =>{
         console.log(data); 
-        localStorage.setItem('token',data.token);
+        // localStorage.setItem('token',data.token);
+        sessionStorage.setItem('token',data.token);
         // console.log("login get token "+ localStorage.getItem('token'))
         this.token = data;
         // location.reload();
@@ -32,6 +34,7 @@ export class AuthenticationService {
 
   logout(){
     localStorage.clear();
+    sessionStorage.clear();
     location.reload();
   }
 
