@@ -7,10 +7,13 @@
   <div *ngIf="Transporters.length !== 0">
     <h1 class="mb-3 text-center">Liste des Transporteurs </h1>
     <div class="col-md-12">
+      <div class="search_transport">
+        <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transporteur" >
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col"> Id Transporteur </th>
+            <!-- <th scope="col"> Id Transporteur </th> -->
             <th scope="col"> Nom du transpoteur : </th>
             <th scope="col"> Adresse du transporteur : </th>
             <th scope="col"> Email du transporteur : </th>
@@ -18,8 +21,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let trans of Transporters">
-            <td>{{ trans.id_transporter }}</td>
+          <tr *ngFor="let trans of Transporters | filter:searchTransport">
+            <!-- <td>{{ trans.id_transporter }}</td> -->
             <td>{{ trans.name }}</td>
             <td>{{ trans.adress }}</td>
             <td>{{ trans.email }}</td>
@@ -36,6 +39,6 @@
 </div>
 
 <div>
-  <button mat-button><a  [routerLink]="['/create/transporter']"> Ajouter un nouveau transporteur </a></button>
+  <button mat-button ><a  [routerLink]="['/create/transporter']"> Ajouter un nouveau transporteur </a></button>
   <button mat-button (click)="exportExcel()" > Générer un Excel </button>
 </div>

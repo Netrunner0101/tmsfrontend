@@ -1,17 +1,31 @@
 <button mat-button color="primary"><a [routerLink]="['/driver/']" > Retour </a></button>
 
-<h1>Ajout d'un nouveau chauffeur</h1>
-<form *ngIf="driverForm" [formGroup]="driverForm"  (ngSubmit)=" createDriver()">
+<h1> Nouveau chauffeur</h1>
+<form id="delivery_form" *ngIf="driverForm" [formGroup]="driverForm"  (ngSubmit)=" createDriver()">
 
-    <label for="name">  Nom du chauffeur  </label>
+    <!-- <label for="name">  Nom du chauffeur  </label>
     <input id="name" type="text" formControlName="name">
   
     <label for="email"> Email du chauffeur : </label>
     <input id="email" type="text" formControlName="email">
 
     <label for="phoneNumber">  Numéro de téléphone du chauffeur  :  </label>
-    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+    <input id="phoneNumber" type="text" formControlName="phoneNumber"> -->
+
+    <mat-form-field appearance="fill" class="name">
+        <mat-label  for="name" >  Nom du chauffeur :</mat-label>
+        <input matInput placeholder="name" id="name" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="email">
+        <mat-label  for="email" >  Email :</mat-label>
+        <input matInput placeholder="email" id="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="phoneNumber">
+        <mat-label for="phoneNumber" >  Numéro de téléphone : </mat-label>
+        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+    </mat-form-field>
 
     <button type="submit">Submit</button>
-    
 </form>

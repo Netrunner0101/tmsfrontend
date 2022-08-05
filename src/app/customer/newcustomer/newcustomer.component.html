@@ -3,7 +3,7 @@
 <h1>Nouveau Client</h1>
 <form *ngIf="customerForm" [formGroup]=" customerForm"  (ngSubmit)="createCustomer()">
 
-    <label for="name"> Nom: </label>
+    <!-- <label for="name"> Nom: </label>
     <input id="name" type="text" formControlName="name">
   
     <label for="vat"> Tva: </label>
@@ -16,8 +16,33 @@
     <input id="email" type="text" formControlName="email">
 
     <label for="phoneNumber"> Numero téléphone: </label>
-    <input id="phoneNumber" type="text" formControlName="phoneNumber">
-    
+    <input id="phoneNumber" type="text" formControlName="phoneNumber"> -->
+
+    <mat-form-field appearance="fill" class="name">
+        <mat-label  for="name" >  Nom du Client :</mat-label>
+        <input matInput placeholder="name" id="name" formControlName="name" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="vat">
+        <mat-label for="vat"> Tva Client :</mat-label>
+        <input matInput placeholder="vat" id="vat" formControlName="vat" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="adress">
+        <mat-label  for="adress"> Adresse Client :</mat-label>
+        <input matInput placeholder="adress" id="adress" formControlName="adress" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="email">
+        <mat-label  for="email" > Email Client :</mat-label>
+        <input matInput placeholder="email" id="email" formControlName="email" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="phoneNumber">
+        <mat-label  for="phoneNumber"> Numéro Téléphone :</mat-label>
+        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+    </mat-form-field>
+    <br>
     <button type="submit">Submit</button>
     
 </form>

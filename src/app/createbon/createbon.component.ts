@@ -16,6 +16,10 @@ export interface Tile {
 
 export class CreatebonComponent implements OnInit {
 
+  searchDelivery:any;
+
+  searchTransport:any;
+
   listBonDelivery:any = [];
 
   listBonTransporter:any = [];
@@ -94,26 +98,6 @@ export class CreatebonComponent implements OnInit {
     this.dataTransporter = event.container.data[event.currentIndex];
     console.log('Data transporter '+this.dataTransporter);
     console.log('Data event container transporter : '+event.container.data);
-  }
-
-  // Limit size of array
-  get isBonDeliveryAvailable(): boolean {
-    return this.listBonDelivery && this.listBonDelivery.length <2;
-  }
-
-   // Limit size of array
-   get isBonTransporterAvailable(): boolean {
-    return this.listBonTransporter && this.listBonTransporter.length <2;
-  }
-
-  // For CdDropPredicate
-  BonDelivery = (): boolean => {
-    return this.isBonDeliveryAvailable;
-  }
-
-  // For CdDropPredicate
-  BonTransporter = (): boolean => {
-    return this.isBonTransporterAvailable;
   }
 
 }

@@ -5,7 +5,6 @@ import { Delivery } from '../model/delivery.model';
 import { DeliveryService } from '../service/delivery.service';
 import * as FileSaver from 'file-saver';
 
-
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
@@ -13,10 +12,10 @@ import * as FileSaver from 'file-saver';
 })
 export class DeliveryComponent implements OnInit {
 
+  searchDelivery:any;
   Delivery:any = [];
-  
   // DeliveryDataSource: Delivery[] = []
-
+  
   constructor(private _deliveryService:DeliveryService, private _router : Router) { }
 
   ngOnInit(): void {

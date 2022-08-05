@@ -27,8 +27,7 @@
 
 <h1> Modifier les détails du transporter.</h1>
 <form [formGroup]="updateTransporterForm"  (ngSubmit)="updateTransporter()">
-
-    <label for="name">  Nom du transpoteur : </label>
+    <!-- <label for="name">  Nom du transpoteur : </label>
     <input id="name" type="text" formControlName="name">
   
     <label for="adress"> Adresse du transporteur : </label>
@@ -38,8 +37,28 @@
     <input id="email" type="text" formControlName="email">
   
     <label for="phoneNumber">  Numéro de contact : </label>
-    <input id="phoneNumber" type="text" formControlName="phoneNumber" />
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" /> -->
 
+    <mat-form-field appearance="fill" class="name">
+        <mat-label  for="name" >  Nom du transporter :</mat-label>
+        <input matInput placeholder="name" id="name" formControlName="name" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="adress">
+        <mat-label  for="adress" >  Adresse du transporteur :</mat-label>
+        <input matInput placeholder="adress" id="adress" formControlName="adress" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="email">
+        <mat-label  for="email" > Email transporteur :</mat-label>
+        <input matInput placeholder="email" id="email" formControlName="email" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="phoneNumber">
+        <mat-label  for="phoneNumber"> Numéro de transporteur :</mat-label>
+        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+    </mat-form-field>
+    <br>
     <button type="submit">Submit</button>
 
 </form>

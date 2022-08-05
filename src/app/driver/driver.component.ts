@@ -11,6 +11,8 @@ import * as FileSaver from 'file-saver';
 })
 export class DriverComponent implements OnInit {
 
+  searchDriver:any;
+
   Drivers:any = [];
 
   constructor(private _driverService:DriverService, private _router : Router) { }

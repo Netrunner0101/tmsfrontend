@@ -11,8 +11,11 @@
         (cdkDropListDropped)="drop($event)"
     >
         <h1> Liste de livraison </h1>
+        <div class="search_driver">
+            <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Recherche Transport" >
+        </div>
         <div class="deliveryitem" 
-            *ngFor="let delivery of Deliveries" 
+            *ngFor="let delivery of Deliveries  | filter:searchDelivery" 
             cdkDrag 
             [cdkDragData]="delivery"
         >   
@@ -29,8 +32,11 @@
         (cdkDropListDropped)="drop($event)"
     >
         <h1> Liste de chauffeur </h1>
+        <div class="search_driver">
+            <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transport" >
+        </div>
         <div class="transporteritem" 
-            *ngFor="let transport of Transporters"
+            *ngFor="let transport of Transporters | filter:searchTransport"
             cdkDrag
         >
             <h3> Chauffeur n° {{ transport.id_transporter }} </h3>

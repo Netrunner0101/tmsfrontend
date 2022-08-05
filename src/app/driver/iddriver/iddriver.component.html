@@ -23,7 +23,7 @@
 
 <h1> Modifier les détails de livraison </h1>
 <form [formGroup]="updateDriverForm"  (ngSubmit)="updateDriver()">
-    
+<!--     
     <label for="name"> Nom du chauffeur : </label>
     <input id="name" type="text" formControlName="name">
   
@@ -31,8 +31,23 @@
     <input id="email" type="text" formControlName="email">
 
     <label for="phoneNumber"> Numéro de téléphone du chauffeur :  </label>
-    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+    <input id="phoneNumber" type="text" formControlName="phoneNumber"> -->
 
+    <mat-form-field appearance="fill" class="name">
+        <mat-label  for="name" >  Nom du chauffeur :</mat-label>
+        <input matInput placeholder="name" id="name" formControlName="name" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="email">
+        <mat-label  for="email" >  Email :</mat-label>
+        <input matInput placeholder="email" id="email" formControlName="email" />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class="phoneNumber">
+        <mat-label  for="phoneNumber" > mot de passe :</mat-label>
+        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+    </mat-form-field>
+    <br>
     <button type="submit">Submit</button>
 
 </form>

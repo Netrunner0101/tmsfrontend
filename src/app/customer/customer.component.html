@@ -11,10 +11,13 @@
   <div *ngIf="Customers.length !== 0">
     <h1 class="mb-3 text-center"> Liste Client </h1>
     <div class="col-md-12">
+      <div class="search_customer">
+        <input type="text" name="search" [(ngModel)]="searchCustomer" placeholder="Recherche client" >
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col"> Id customer </th>
+            <!-- <th scope="col"> Id customer </th> -->
             <th scope="col">Name</th>
             <th scope="col">vat</th>
             <th scope="col">Adresse</th>
@@ -23,8 +26,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let customer of Customers">
-            <td>{{ customer.id_customer}}</td>
+          <tr *ngFor="let customer of Customers | filter:searchCustomer">
+            <!-- <td>{{ customer.id_customer}}</td> -->
             <td>{{ customer.name }}</td>
             <td>{{ customer.vat}}</td>
             <td>{{ customer.adress}}</td>

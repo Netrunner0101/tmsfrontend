@@ -3,17 +3,17 @@
   <!-- Show it when there is no employee -->
   <div class="no-data text-center" *ngIf="Delivery.length == 0">
     <p> Il y a aucune livraison .</p>
-    <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
-      Add Empoyee
-    </button> -->
   </div>
   <div *ngIf="Delivery.length !== 0">
     <h1 class="mb-3 text-center">Liste des livraisons </h1>
     <div class="col-md-12">
+      <div class="search_delivery">
+        <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Rechercher Livraison" >
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col"> Id Livraison </th>
+            <!-- <th scope="col"> Id Livraison </th> -->
             <th scope="col"> Numero </th>
             <th scope="col"> Adresse </th>
             <th scope="col"> Poids (Kg) </th>
@@ -23,8 +23,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let deli of Delivery">
-            <td>{{ deli.id_delivery}}</td>
+          <tr *ngFor="let deli of Delivery | filter:searchDelivery">
+            <!-- <td>{{ deli.id_delivery}}</td> -->
             <td>{{ deli.numeroDelivery }}</td>
             <td>{{ deli.adress }}</td>
             <td>{{ deli.weight}}</td>
@@ -46,3 +46,4 @@
   <button mat-button><a  [routerLink]="['/create/delivery']"> Créer une nouvelle Livraison </a></button>
   <button mat-button (click)="exportExcel()" > Générer un Excel </button>
 </div>
+

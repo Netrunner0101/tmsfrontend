@@ -37,6 +37,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSortModule} from '@angular/material/sort';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BondetailsComponent } from './createbon/bondetails/bondetails.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -78,7 +79,7 @@ import { BondetailsComponent } from './createbon/bondetails/bondetails.component
     MatProgressSpinnerModule,
     MatInputModule,
     MatPaginatorModule,
-    
+    Ng2SearchPipeModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}

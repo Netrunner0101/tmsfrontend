@@ -11,27 +11,27 @@
   <div *ngIf="Drivers.length !== 0">
     <h1 class="mb-3 text-center">Liste des Chauffeurs </h1>
     <div class="col-md-12">
+      <div class="search_driver">
+        <input type="text" name="search" [(ngModel)]="searchDriver" placeholder="Recherche Chauffeur" >
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col"> Id driver </th>
+            <!-- <th scope="col"> Id driver </th> -->
             <th scope="col"> Nom du chauffeur </th>
             <th scope="col"> Email du chauffeur : </th>
             <th scope="col"> Numéro de téléphone du chauffeur : </th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let driver of Drivers">
-            <td>{{ driver.id_drive}}</td>
+          <tr *ngFor="let driver of Drivers | filter:searchDriver">
+            <!-- <td>{{ driver.id_drive}}</td> -->
             <td>{{ driver.name }}</td>
             <td>{{ driver.email }}</td>
             <td>{{ driver.phoneNumber }}</td>
             <td>
-              <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
-                >Edit
-              </span> -->
                 <button type="button" mat-button (click)='deleteDriver(driver.id_drive)'> Supprimer </button>
-                <button mat-button><a  [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"> Détail de la livraison </a></button>
+                <button mat-button><a  [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"> Détail du Chauffeur </a></button>
             </td>
           </tr>
         </tbody>

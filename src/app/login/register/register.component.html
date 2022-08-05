@@ -1,24 +1,37 @@
-<h1> Enregistrer un nouveau collaborateur : </h1>
-<form *ngIf="newUserForm" [formGroup]="newUserForm"  (ngSubmit)=" registerUser()">
-
-    <label for="name">  Nom de famille :  </label>
-    <input id="name" type="text" formControlName="name">
-  
-    <label for="lastname"> Prénom : </label>
-    <input id="lastname" type="text" formControlName="lastname">
-
-    <label for="adress">  Adresse  :  </label>
-    <input id="adress" type="text" formControlName="adress">
-
-    <label for="city">  Ville :  </label>
-    <input id="city" type="text" formControlName="city">
-  
-    <label for="email"> Email : </label>
-    <input id="email" type="text" formControlName="email">
-
-    <label for="password">  Mot de passe :  </label>
-    <input id="password" type="text" formControlName="password">
-
-    <button type="submit">Submit</button>
-
-</form>
+<div class="register_from">
+    <h1> Enregistrer un nouveau collaborateur : </h1>
+    <form *ngIf="newUserForm" [formGroup]="newUserForm"  (ngSubmit)=" registerUser()">
+        
+        <mat-form-field appearance="fill" class="name">
+            <mat-label  for="name">  Nom de famille :</mat-label>
+            <input matInput placeholder="name" id="name" formControlName="name" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="lastname">
+            <mat-label  for="lastname"> Prénom :</mat-label>
+            <input matInput placeholder="lastname" id="lastname" formControlName="lastname"/>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="adress">
+            <mat-label  for="adress" > Adresse :</mat-label>
+            <input matInput placeholder="adress" id="adress" formControlName="adress" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="city">
+            <mat-label  for="city"> Ville :</mat-label>
+            <input matInput placeholder="city" id="city" formControlName="city" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="email">
+            <mat-label  for="email"> Email :</mat-label>
+            <input matInput placeholder="email" id="email" formControlName="email" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="password">
+            <mat-label  for="password">  Mot de passe :</mat-label>
+            <input matInput placeholder="password" id="password" formControlName="password" />
+        </mat-form-field>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
