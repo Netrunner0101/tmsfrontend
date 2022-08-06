@@ -2,6 +2,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatIconModule} from '@angular/material/icon';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BondetailsComponent } from './createbon/bondetails/bondetails.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -79,7 +81,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatProgressSpinnerModule,
     MatInputModule,
     MatPaginatorModule,
+    MatIconModule,
     Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}

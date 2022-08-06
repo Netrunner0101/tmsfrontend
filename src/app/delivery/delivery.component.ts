@@ -34,6 +34,7 @@ export class DeliveryComponent implements OnInit {
     this._deliveryService.delete(idd).subscribe(
       (r) => {
         console.log("Delete delivery sucess");
+        location.reload();
       }
     )
   }

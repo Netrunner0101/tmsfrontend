@@ -31,7 +31,7 @@
         [cdkDropListConnectedTo]="[creationTransList]"
         (cdkDropListDropped)="drop($event)"
     >
-        <h1> Liste de chauffeur </h1>
+        <h1> Liste de Transporteur </h1>
         <div class="search_driver">
             <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transport" >
         </div>
@@ -76,7 +76,7 @@
                         class="trans-list"
                         (cdkDropListDropped)="dropIdTrans($event)"
                     >   
-                        <h1> Données du transporter </h1>
+                        <h1> Données du transporteur </h1>
                         <div class="trans-item" *ngFor="let itemTrans of listBonTransporter" cdkDrag>
                             {{ itemTrans.name }}
                             {{ itemTrans.phoneNumber }}

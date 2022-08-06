@@ -32,6 +32,7 @@ export class TransporterComponent implements OnInit {
     this._transporterService.delete(idtrans).subscribe(
       (r) => {
         console.log("Delete Transporter sucess");
+        location.reload();
       }
     )
   }

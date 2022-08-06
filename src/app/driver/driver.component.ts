@@ -33,6 +33,7 @@ export class DriverComponent implements OnInit {
     this._driverService.delete(iddriver).subscribe(
       (r) => {
         console.log("Delete driver sucess");
+        location.reload();
       }
     )
   }
