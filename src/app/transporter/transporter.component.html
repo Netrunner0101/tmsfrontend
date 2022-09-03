@@ -7,9 +7,12 @@
   <div *ngIf="Transporters.length !== 0">
     <div class="table_header">
       <h1 class="mb-3 text-center">Liste des Transporteurs </h1>
-      <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transporteur" >
-    </div>
+      </div>
     <div class="col-md-12">
+      <div class="search_driver">
+        Recherche : 
+        <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transporteur" >
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
