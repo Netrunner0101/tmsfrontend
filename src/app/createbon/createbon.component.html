@@ -54,7 +54,7 @@
             <div class="mainCreateContainer">
                 <!-- <h1> Creation container </h1>
                 <h3> Ajouter les informations. </h3> -->
-                <div class="createContainer">
+                <div class="deliveryBonContainer">
                     <div
                         cdkDropList
                         #creationDelList="cdkDropList"
@@ -64,11 +64,22 @@
                         >   
                         <h1> Données de Livraison </h1>
                         <div class="bon-item" *ngFor="let itemDel of listBonDelivery" cdkDrag>
-                            {{ itemDel.numeroDelivery }}  ||  {{ itemDel.adress }} || {{ itemDel.dateDelivery }} ||{{ itemDel.remarks }}
+                            <div>
+                              {{ itemDel.numeroDelivery }}  
+                            </div>
+                            <div>
+                                {{ itemDel.adress }}  
+                            </div>   
+                            <div>
+                                {{ itemDel.dateDelivery }}
+                            </div>
+                            <div>
+                               {{ itemDel.remarks }}
+                            </div>
                         </div>
                     </div>  
                 </div>
-                <div class="createContainer" >
+                <div class="transporterBonContainer" >
                     <div
                         cdkDropList
                         #creationTransList="cdkDropList"
@@ -78,8 +89,12 @@
                     >   
                         <h1> Données du transporteur </h1>
                         <div class="trans-item" *ngFor="let itemTrans of listBonTransporter" cdkDrag>
-                            {{ itemTrans.name }}
-                            {{ itemTrans.phoneNumber }}
+                            <div>
+                                {{ itemTrans.name }}
+                            </div>
+                            <div>
+                               Téléphone : {{ itemTrans.phoneNumber }}  
+                            </div>
                         </div>
                     </div>
                 </div> 

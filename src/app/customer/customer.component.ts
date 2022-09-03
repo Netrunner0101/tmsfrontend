@@ -50,6 +50,7 @@ export class CustomerComponent implements OnInit {
       });
     }
   }
+  
   saveAsExcelFile(buffer: any, fileName: string): void {
     let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
     let EXCEL_EXTENSION = '.xlsx';

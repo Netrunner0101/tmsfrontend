@@ -1,24 +1,33 @@
 <mat-card class="bon_details_card">
     <mat-card-header>
-      <mat-card-title> Détail du bon de livraison </mat-card-title>
+      <mat-card-title> <h1 id="title_component"> Détail du bon de livraison </h1> </mat-card-title>
     </mat-card-header>
     <mat-card-content >
-      <div id="details_bon"> 
+      <hr>
+      <div id="details_bon">
+        <h1 id="title_details_bon"> Bon de livraison </h1>
+        <div id="details_del">
+          <h2 id="title_del"> Livraison : </h2> 
+          <h3 id="title"> Numero de livraison : </h3>
+          <p id="content"> {{data_delivery.numeroDelivery | uppercase }} </p>
+          <h3 id="title"> Adresse de livraison : </h3>
+          <p id="content"> {{ data_delivery.adress }} </p>
+          <h3 id="title"> Poids (kg) : </h3>
+          <p id="content"> {{data_delivery.weight }} </p> 
+          <h3 id="title"> Jour de livraison : </h3>
+          <p id="content"> {{data_delivery.dateDelivery |  date:'MMMM d, y' }} </p>
+        </div>
         <hr>
-        <div class="details_del">
-          <h2> Livraison : {{data_delivery.numeroDelivery | uppercase }}  </h2> 
-          <h3> Adresse de livraison : </h3>
-          <h3> Poids : {{data_delivery.weight }} </h3>
-          <h3> Jour de livraison : </h3>
-          <h3> {{data_delivery.dateDelivery |  date:'MMMM d, y' }} </h3>
+        <div id="details_trans">
+          <h2 id="title_trans"> Transporteur : </h2>
+          <h4 id="title"> Nom :  </h4>
+          <p id="content"> {{ data_trans.name }} </p>
+          <h4 id="title"> Numéro de téléphone :  </h4>
+          <p id="content"> {{ data_trans.phoneNumber }} </p>
         </div>
-        <div class="details_trans">
-          <h2 > Transporteur : </h2>
-          <h4> Nom : {{ data_trans.name }} </h4>
-          <h4> Numéro de téléphone : {{ data_trans.phoneNumber }} </h4>
-        </div>
-        <h1> Remarques particulière : </h1>
-        <h3> {{ data_delivery.remarks }} </h3> 
+        <hr>
+        <h1 id="title_remarks"> Remarques: </h1>
+        <h3 id="content_remarks"> {{ data_delivery.remarks }} </h3> 
       </div>
     </mat-card-content>
     <mat-card-actions>
