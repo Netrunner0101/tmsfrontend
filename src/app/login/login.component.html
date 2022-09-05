@@ -1,5 +1,5 @@
 <div class="login_component">
-    <h1> Login </h1>
+    <h1 id="login_title"> Login </h1>
     <form id="login_form" *ngIf="userForm" [formGroup]="userForm"  (ngSubmit)="login()">
         <br>
         <mat-form-field class="email">
@@ -13,13 +13,13 @@
         </mat-form-field>
         <br>
         <div class="button-wrapper">
-            <button mat-flat-button color="primary">Submit</button>
+            <button id="submit" mat-flat-button color="primary">Submit</button>
         </div>
-        <br>
+        <div id="login_bottom" >
+            <button id="logout" type="submit" (click)="logout()" > Deconnection </button>
+            <button id="register" > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>    
+        </div>
     </form>
-    <div id="login_bottom" >
-        <button id="submit" type="submit" (click)="logout()" > Deconnection </button>
-        <button id="register" > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>    
-    </div>
+    
 </div>
 
