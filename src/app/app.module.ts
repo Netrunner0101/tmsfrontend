@@ -40,6 +40,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BondetailsComponent } from './createbon/bondetails/bondetails.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
     MatTooltipModule,
+    MatExpansionModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptor, multi:true}

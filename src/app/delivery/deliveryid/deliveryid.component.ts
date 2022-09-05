@@ -20,7 +20,6 @@ export class DeliveryidComponent implements OnInit {
   // Empty customer object.
   delivery = <Delivery>{};
 
-
    // Initial formgroup
    updateDeliveryForm= new FormGroup({
     numeroDelivery : new FormControl(''),

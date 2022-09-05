@@ -1,43 +1,87 @@
+<button id="return_button" mat-button > <a [routerLink]="['/delivery']">Retour</a></button>
+<div style="display: flex; flex-grow: grow">
+    <mat-card *ngIf="delivery" class="example-card" id="deliveryDetail">
+        <mat-card-title id="delivery_details_title"> 
+            <h1> Details Livraison </h1> 
+            <hr>
+        </mat-card-title>
+        <!-- <mat-card-subtitle> {{ delivery.id_delivery }} </mat-card-subtitle> -->
+        <mat-card-content id="delivery_details_content">
+            <div>
+                <h3> Numero de livraison :  </h3>
+                <p>{{ delivery.numeroDelivery }}</p>  
+            </div>
+            <div>
+                <h3> Adresse de livraison :  </h3>
+                <p>{{ delivery.adress }}</p>  
+            </div>
+            <div>
+                <h3> Poids (Kg)  :  </h3>
+                <p>{{ delivery.weight }}</p>  
+            </div>
+            <div>
+                <h3> Date de transfert :  </h3>
+                <p>{{ delivery.dateTransfert | date:'MM/dd/yy' }}</p>  
+            </div>
+            <div>
+                <h3> Date de livraison  :  </h3>
+                <p>{{ delivery.dateDelivery | date:'MM/dd/yy' }}</p>  
+            </div>
+            <div>
+                <h3> Commentaire  :  </h3>
+                <p>{{ delivery.remarks }}</p>  
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
+        </mat-card-actions>
+    </mat-card>
+    <mat-card *ngIf="delivery" class="example-card" id="deliveryDetail">
+        <mat-card-title id="delivery_change_title"> 
+            <h1> Modifier les détails de livraison </h1>
+            <hr> 
+        </mat-card-title>
+        <mat-card-content id="delivery_change_content">
+            <form [formGroup]="updateDeliveryForm"  (ngSubmit)="updateDelivery()">
+                <mat-form-field appearance="fill" class="numeroDelivery">
+                    <mat-label  for="numeroDelivery" >  Numero de livraison :</mat-label>
+                    <input matInput placeholder="numeroDelivery" id="numeroDelivery" formControlName="numeroDelivery" />
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="weight">
+                    <mat-label  for="weight" >  Poids :</mat-label>
+                    <input matInput placeholder="weight" id="weight" formControlName="weight" />
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="adress">
+                    <mat-label  for="adress" > Adresse :</mat-label>
+                    <input matInput placeholder="adress" id="adress" formControlName="adress" />
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="dateTransfert">
+                    <mat-label  for="dateTransfert" >  Date de transfert : {{ delivery.dateTransfert | date:'MM/dd/yy' }}</mat-label>
+                    <input matInput type="date" placeholder="dateTransfert" id="dateTransfert" formControlName="dateTransfert" />
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="dateDelivery">
+                    <mat-label  for="dateDelivery"> Date de livraison : {{ delivery.dateDelivery | date:'MM/dd/yy' }} </mat-label>
+                    <input matInput type="date" placeholder="dateDelivery" id="dateDelivery" formControlName="dateDelivery" />
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="remarks">
+                    <mat-label  for="remarks"> Remarque:</mat-label>
+                    <input matInput placeholder="remarks" id="remarks" formControlName="remarks" />
+                </mat-form-field>
+                <br>
+                <button type="submit">Submit</button>
+            </form>   
+        </mat-card-content>
+        
+    </mat-card>
+</div>
 
-<mat-card *ngIf="delivery" class="example-card" id="deliveryDetail">
-    <mat-card-title> <h1> Details Livraison </h1> </mat-card-title>
-    <!-- <mat-card-subtitle> {{ delivery.id_delivery }} </mat-card-subtitle> -->
-    <mat-card-content>
-        <div>
-            <h3> Numero de livraison :  </h3>
-            <p>{{ delivery.numeroDelivery }}</p>  
-        </div>
-        <div>
-            <h3> Adresse de livraison :  </h3>
-            <p>{{ delivery.adress }}</p>  
-        </div>
-        <div>
-            <h3> Poids (Kg)  :  </h3>
-            <p>{{ delivery.weight }}</p>  
-        </div>
-        <div>
-            <h3> Date de transfert :  </h3>
-            <p>{{ delivery.dateTransfert | date:'MM/dd/yy' }}</p>  
-        </div>
-        <div>
-            <h3> Date de livraison  :  </h3>
-            <p>{{ delivery.dateDelivery | date:'MM/dd/yy' }}</p>  
-        </div>
-        <div>
-            <h3> Commentaire  :  </h3>
-            <p>{{ delivery.remarks }}</p>  
-        </div>
-    </mat-card-content>
-    <mat-card-actions>
-        <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
-        <button mat-button > <a [routerLink]="['/delivery']">Retour</a></button>
-    </mat-card-actions>
-</mat-card>
 
-<h1> Modifier les détails de livraison </h1>
-<form [formGroup]="updateDeliveryForm"  (ngSubmit)="updateDelivery()">
-    
-    <!-- <label for="numeroDelivery"> Numero de livraison: </label>
+  <!-- <label for="numeroDelivery"> Numero de livraison: </label>
     <input id="numeroDelivery" type="text" formControlName="numeroDelivery">
   
     <label for="weight"> Poids: </label>
@@ -54,37 +98,3 @@
 
     <label for="remarks"> Remarque: </label>
     <input id="remarks" type="text" formControlName="remarks"> -->
-
-    <mat-form-field appearance="fill" class="numeroDelivery">
-        <mat-label  for="numeroDelivery" >  Numero de livraison :</mat-label>
-        <input matInput placeholder="numeroDelivery" id="numeroDelivery" formControlName="numeroDelivery" />
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill" class="weight">
-        <mat-label  for="weight" >  Poids :</mat-label>
-        <input matInput placeholder="weight" id="weight" formControlName="weight" />
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill" class="adress">
-        <mat-label  for="adress" > Adresse :</mat-label>
-        <input matInput placeholder="adress" id="adress" formControlName="adress" />
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill" class="dateTransfert">
-        <mat-label  for="dateTransfert" >  Date de transfert : {{ delivery.dateTransfert | date:'MM/dd/yy' }}</mat-label>
-        <input matInput type="date" placeholder="dateTransfert" id="dateTransfert" formControlName="dateTransfert" />
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill" class="dateDelivery">
-        <mat-label  for="dateDelivery"> Date de livraison : {{ delivery.dateDelivery | date:'MM/dd/yy' }} </mat-label>
-        <input matInput type="date" placeholder="dateDelivery" id="dateDelivery" formControlName="dateDelivery" />
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill" class="remarks">
-        <mat-label  for="remarks"> Remarque:</mat-label>
-        <input matInput placeholder="remarks" id="remarks" formControlName="remarks" />
-    </mat-form-field>
-    <br>
-    <button type="submit">Submit</button>
-
-</form>

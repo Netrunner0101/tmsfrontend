@@ -1,6 +1,6 @@
-<div>
-    <h1> Connection </h1>
-    <form *ngIf="userForm" [formGroup]="userForm"  (ngSubmit)="login()">
+<div class="login_component">
+    <h1> Login </h1>
+    <form id="login_form" *ngIf="userForm" [formGroup]="userForm"  (ngSubmit)="login()">
         <br>
         <mat-form-field class="email">
             <mat-label for="email" > Email:</mat-label>
@@ -17,9 +17,9 @@
         </div>
         <br>
     </form>
-    <br>
-    <button type="submit" (click)="logout()" > Deconnection </button>
-    <br>
-    <button > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>    
+    <div id="login_bottom" >
+        <button id="submit" type="submit" (click)="logout()" > Deconnection </button>
+        <button id="register" > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>    
+    </div>
 </div>
 
