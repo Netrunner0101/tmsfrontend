@@ -8,8 +8,9 @@ import { Transporter } from '../model/transporter.model';
 })
 export class TransporterService {
 
-  url = 'https://localhost:7233';
+  // url = 'majesticboy-001-site2.btempurl.com';
 
+  url = 'https://localhost:7233';
   constructor(private _http:HttpClient) { }
 
   getAll():Observable<Transporter>{

@@ -2,12 +2,12 @@
     <mat-card-header>
       <mat-card-title> <h1 id="title_component"> Détail du bon de livraison </h1> </mat-card-title>
     </mat-card-header>
-    <mat-card-content >
+    <mat-card-content id="card_content_details">
       <hr>
       <div id="details_bon">
-        <h1 id="title_details_bon"> Bon de livraison </h1>
+        <!-- <h1 id="title_details_bon"> Bon de livraison </h1> -->
         <div id="details_del">
-          <h2 id="title_del"> Livraison : </h2> 
+          <h2 id="title_del"> Détails de la livraison : </h2> 
           <h3 id="title"> Numero de livraison : </h3>
           <p id="content"> {{data_delivery.numeroDelivery | uppercase }} </p>
           <h3 id="title"> Adresse de livraison : </h3>
@@ -19,7 +19,7 @@
         </div>
         <hr>
         <div id="details_trans">
-          <h2 id="title_trans"> Transporteur : </h2>
+          <h2 id="title_trans"> Détails du transporteur : </h2>
           <h4 id="title"> Nom :  </h4>
           <p id="content"> {{ data_trans.name }} </p>
           <h4 id="title"> Numéro de téléphone :  </h4>
@@ -32,6 +32,6 @@
     </mat-card-content>
     <mat-card-actions>
       <!-- <button mat-button (click)="createPdf()" > Génerer le PDF </button> -->
-      <button mat-button (click)="createPdf()" ><mat-icon>picture_as_pdf</mat-icon> Génerer le PDF </button>
+      <button id="pdf_button" mat-button (click)="createPdf()" ><mat-icon>picture_as_pdf</mat-icon> Génerer le PDF </button>
     </mat-card-actions>
   </mat-card>

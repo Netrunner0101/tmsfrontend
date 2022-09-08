@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthenticationService {
 
+  //url = 'majesticboy-001-site2.btempurl.com';
+
   url = 'https://localhost:7233';
 
   token ='';
@@ -42,6 +44,14 @@ export class AuthenticationService {
     return this.http.post(this.url+'/tms/register',user)
   }
 
+  checkifToken(){
+    if(sessionStorage.getItem('token')!=null ){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   // setToken(mytoken:any){
   //   this.token=mytoken.token;
   // }

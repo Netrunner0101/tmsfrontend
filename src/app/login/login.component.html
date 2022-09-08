@@ -13,10 +13,11 @@
         </mat-form-field>
         <br>
         <div class="button-wrapper">
-            <button id="submit" mat-flat-button color="primary">Submit</button>
+            <button id="submit" mat-flat-button color="primary" (ngSubmit)="login()"> Login </button>
+            <button id="logout" type="submit" (click)="logout()" > Deconnection </button>
         </div>
         <div id="login_bottom" >
-            <button id="logout" type="submit" (click)="logout()" > Deconnection </button>
+            <p> Pour s'enregister cliquer sur le bouton.</p>
             <button id="register" > <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a>  </button>    
         </div>
     </form>

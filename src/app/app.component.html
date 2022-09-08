@@ -3,6 +3,12 @@
   <body>
   <mat-toolbar color="primary">
     <h1> Little Transporter </h1>
+    <div class="connection_tab" *ngIf="check"> 
+      <h3 class="connection_title"> Connected<mat-icon class="connection_icon">brightness_high  </mat-icon>  </h3>
+    </div>
+    <div class="connection_tab" *ngIf="!check">
+      <h3 class="connection_title"> Disconnect <mat-icon class="connection_icon">brightness_low </mat-icon></h3>  
+    </div>
   </mat-toolbar>
   <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
@@ -13,10 +19,12 @@
         <a mat-list-item [routerLink]="'/transporter'" > Transporteur </a>
         <a mat-list-item [routerLink]="'/driver'" > Chauffeurs </a>
         <a mat-list-item [routerLink]="'/createbon'" > Créer Bon Livraison </a>
-        <button mat-button class="buttonRegister"> 
-          <a mat-list-item [routerLink]="'/register'"> S'enregistrer </a> 
+        <a class="buttonRegister" mat-list-item [routerLink]="'/register'"> S'enregistrer </a> 
+        <button mat-button class="buttonDisconnect"> 
+          <a mat-list-item (click)="disconnect()"> Déconnection </a> 
         </button>
       </mat-nav-list>
+      
     </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 100vh;">

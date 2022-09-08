@@ -11,9 +11,9 @@
         (cdkDropListDropped)="drop($event)"
     >
         <h1> Liste de livraison </h1>
-        <div class="search_driver">
+        <!-- <div class="search_driver">
             <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Recherche Transport" >
-        </div>
+        </div> -->
         <div class="deliveryitem" 
             *ngFor="let delivery of Deliveries  | filter:searchDelivery" 
             cdkDrag 
@@ -32,9 +32,9 @@
         (cdkDropListDropped)="drop($event)"
     >
         <h1> Liste de Transporteur </h1>
-        <div class="search_driver">
+        <!-- <div class="search_driver">
             <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transport" >
-        </div>
+        </div> -->
         <div class="transporteritem" 
             *ngFor="let transport of Transporters | filter:searchTransport"
             cdkDrag
@@ -102,7 +102,7 @@
         </mat-card-content>
         <mat-card-actions>
             <!-- <button mat-button color="accent"> <a [routerLink]="['/detailsbon/'+itemDel.id_delivery]" > Voir Pdf </a> </button> -->
-            <button mat-button color="accent"> <a [routerLink]="['/detailsbon/',dataDelivery.id_delivery,dataTransporter.id_transporter]" [queryParams]="{ idd: dataDelivery.id_delivery ,idt: dataTransporter.id_transporter }"> Voir Pdf </a> </button>
+            <button id="go_button" mat-button color="accent"> <a [routerLink]="['/detailsbon/',dataDelivery.id_delivery,dataTransporter.id_transporter]" [queryParams]="{ idd: dataDelivery.id_delivery ,idt: dataTransporter.id_transporter }"> Voir Pdf </a> </button>
         </mat-card-actions>
     </mat-card>
       

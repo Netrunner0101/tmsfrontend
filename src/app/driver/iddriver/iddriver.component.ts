@@ -10,8 +10,6 @@ import { DriverService } from 'src/app/service/driver.service';
   styleUrls: ['./iddriver.component.sass']
 })
 export class IddriverComponent implements OnInit {
-
-  
   //  Empty number constructor.
   iddr:number = <number>{};
 
@@ -31,7 +29,7 @@ export class IddriverComponent implements OnInit {
   ngOnInit(): void {
     this._route.queryParams.subscribe(
       (qurl)=>{
-        console.log("param url : ", qurl['iddriver'] );
+        console.log("param url :", qurl['iddriver'] );
         this.iddr = qurl['iddriver']
         console.log("Variable Iddriver = ", this.iddr );
         this.getDriverById(this.iddr);
