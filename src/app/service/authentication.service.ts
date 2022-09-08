@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthenticationService {
 
-  //url = 'majesticboy-001-site2.btempurl.com';
+  url = 'http://majesticboy-001-site2.btempurl.com';
 
-  url = 'https://localhost:7233';
+  // url = 'https://localhost:7233';
 
   token ='';
 
