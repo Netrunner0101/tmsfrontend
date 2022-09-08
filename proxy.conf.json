@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+      "target": "http://majesticboy-001-site2.btempurl.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }
