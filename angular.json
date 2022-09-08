@@ -71,7 +71,7 @@
           "configurations": {
             "production": {
               "browserTarget": "tmsfront2:build:production",
-              "port":"http://majesticboy-001-site2.btempurl.com/"
+              "port": "http://majesticboy-001-site2.btempurl.com/"
             },
             "development": {
               "browserTarget": "tmsfront2:build:development"
@@ -102,6 +102,14 @@
               "src/styles.sass"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/tmsfront2",
+            "netlifyToken": "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",
+            "siteId": "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"
           }
         }
       }
