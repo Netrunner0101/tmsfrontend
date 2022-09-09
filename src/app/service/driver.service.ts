@@ -8,7 +8,7 @@ import { Driver } from '../model/driver.model';
 })
 export class DriverService {
 
-  url = 'http://majesticboy-001-site2.btempurl.com';
+  url = 'http://majesticboy-001-site1.btempurl.com';
 
   // url = 'https://localhost:7233';
 
