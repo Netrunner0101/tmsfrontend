@@ -8,7 +8,7 @@ import { Delivery } from '../model/delivery.model';
 })
 export class DeliveryService {
 
-  url = 'http://majesticboy-001-site3.btempurl.com';
+  url = 'http://majesticboy-001-site1.btempurl.com';
 
   // url = 'https://localhost:7233';
 
