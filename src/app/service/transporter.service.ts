@@ -8,7 +8,7 @@ import { Transporter } from '../model/transporter.model';
 })
 export class TransporterService {
 
-  url = 'http://majesticboy-001-site1.btempurl.com';
+  url = 'https://majesticboy-001-site4.btempurl.com';
 
   // url = 'https://localhost:7233';
 
