@@ -1,53 +1,53 @@
-
-<div class="container custom-container-2">
-  <!-- Show it when there is no employee -->
-  <div class="no-data text-center" *ngIf="Delivery.length == 0">
-    <p> Il y a aucune livraison .</p>
-  </div>
-  <div *ngIf="Delivery.length !== 0">
-    <h1 id="delivery_component" class="mb-3 text-center">Liste des livraisons </h1>
-    <div class="col-md-12">
-      <div id="search_bar">
-        <div class="search_delivery">
-          Recherche : 
-          <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Rechercher Livraison" >
+<div id="main">
+  <div class="container custom-container-2">
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Delivery.length == 0">
+      <p> Il y a aucune livraison .</p>
+    </div>
+    <div *ngIf="Delivery.length !== 0">
+      <h1 id="delivery_component" class="mb-3 text-center">Liste des livraisons </h1>
+      <div class="col-md-12">
+        <div id="search_bar">
+          <div class="search_delivery">
+            Recherche : 
+            <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Rechercher Livraison" >
+          </div>
         </div>
+        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <!-- <th scope="col"> Id Livraison </th> -->
+              <th scope="col"> Numero </th>
+              <th scope="col"> Adresse </th>
+              <th scope="col"> Poids (Kg) </th>
+              <th scope="col"> Date de transfert </th>
+              <th scope="col"> Date de livraison </th>
+              <th scope="col"> Commentaire </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let deli of Delivery | filter:searchDelivery">
+              <!-- <td>{{ deli.id_delivery}}</td> -->
+              <td>{{ deli.numeroDelivery }}</td>
+              <td>{{ deli.adress }}</td>
+              <td>{{ deli.weight}}</td>
+              <td>{{ deli.dateTransfert | date:'M/d/yy' }}</td>
+              <td>{{ deli.dateDelivery | date:'M/d/yy' }}</td>
+              <td>{{ deli.remarks }}</td>
+              <td>
+                  <button type="button" mat-button  (click)='deleteDelivery(deli.id_delivery)' matTooltip="Supprimer"> <mat-icon  type="button">delete_outline</mat-icon>  </button>
+                  <button mat-button><a  [routerLink]="['/delivery/',deli.id_delivery]" [queryParams]="{ idd:deli.id_delivery }" matTooltip="Détail livraison"> <mat-icon>description</mat-icon> </a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <!-- <th scope="col"> Id Livraison </th> -->
-            <th scope="col"> Numero </th>
-            <th scope="col"> Adresse </th>
-            <th scope="col"> Poids (Kg) </th>
-            <th scope="col"> Date de transfert </th>
-            <th scope="col"> Date de livraison </th>
-            <th scope="col"> Commentaire </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let deli of Delivery | filter:searchDelivery">
-            <!-- <td>{{ deli.id_delivery}}</td> -->
-            <td>{{ deli.numeroDelivery }}</td>
-            <td>{{ deli.adress }}</td>
-            <td>{{ deli.weight}}</td>
-            <td>{{ deli.dateTransfert | date:'M/d/yy' }}</td>
-            <td>{{ deli.dateDelivery | date:'M/d/yy' }}</td>
-            <td>{{ deli.remarks }}</td>
-            <td>
-                <button type="button" mat-button  (click)='deleteDelivery(deli.id_delivery)' matTooltip="Supprimer"> <mat-icon  type="button">delete_outline</mat-icon>  </button>
-                <button mat-button><a  [routerLink]="['/delivery/',deli.id_delivery]" [queryParams]="{ idd:deli.id_delivery }" matTooltip="Détail livraison"> <mat-icon>description</mat-icon> </a></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
-</div>
 
-<div>
-  <button mat-button><a  [routerLink]="['/create/delivery']"> <mat-icon>create</mat-icon> Nouvelle Livraison </a></button>
-  <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  <div>
+    <button mat-button><a  [routerLink]="['/create/delivery']"> <mat-icon>create</mat-icon> Nouvelle Livraison </a></button>
+    <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  </div>
 </div>
-

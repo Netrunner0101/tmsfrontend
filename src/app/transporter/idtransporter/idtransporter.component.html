@@ -1,65 +1,68 @@
-<button mat-button > <a [routerLink]="['/transporter']"> Retour </a></button>
-<div style="display: flex; flex-grow: grow">
-    <mat-card *ngIf="transporter" class="example-card" id="transporterDetail">
-        <mat-card-title  id="transoprter_details_title"> 
-            <h1> Details Transporteur </h1> 
-            <hr>
-        </mat-card-title>
-        <!-- <mat-card-subtitle> {{ transporter.id_transporter }} </mat-card-subtitle> -->
-        <mat-card-content  id="transporter_details_content">
-            <div>
-                <h3> Nom du transpoteur :  </h3>
-                <p>{{ transporter.name }}</p>  
-            </div>
-            <div>
-                <h3> Adresse du transporteur : </h3>
-                <p>{{ transporter.adress }}</p>  
-            </div>
-            <div>
-                <h3> Email du transporteur :  </h3>
-                <p>{{ transporter.email }}</p>  
-            </div>
-            <div>
-                <h3> Numéro de contact :  </h3>
-                <p>{{ transporter.phoneNumber }}</p>  
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
-        </mat-card-actions>
-    </mat-card>
-    <mat-card>
-        <mat-card-title  id="transporter_change_title">
-            <h1> Modifier les détails du transporter.</h1>
-            <hr>
-        </mat-card-title>>
-        <mat-card-content id="transporter_change_content">
-            <form [formGroup]="updateTransporterForm"  (ngSubmit)="updateTransporter()">
-                <mat-form-field appearance="fill" class="name">
-                    <mat-label  for="name" > Nom du transporter :</mat-label>
-                    <input matInput placeholder="name" id="name" formControlName="name" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="adress">
-                    <mat-label  for="adress" >  Adresse du transporteur :</mat-label>
-                    <input matInput placeholder="adress" id="adress" formControlName="adress" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="email">
-                    <mat-label  for="email" > Email transporteur :</mat-label>
-                    <input matInput placeholder="email" id="email" formControlName="email" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="phoneNumber">
-                    <mat-label  for="phoneNumber"> Numéro de transporteur :</mat-label>
-                    <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
-                </mat-form-field>
-                <br>
-                <button type="submit">Submit</button>          
-            </form>
-        </mat-card-content>
-    </mat-card>
+<div id="main">
+    <button mat-button > <a [routerLink]="['/transporter']"> Retour </a></button>
+    <div style="display: flex; flex-grow: grow">
+        <mat-card *ngIf="transporter" class="example-card" id="transporterDetail">
+            <mat-card-title  id="transoprter_details_title"> 
+                <h1> Details Transporteur </h1> 
+                <hr>
+            </mat-card-title>
+            <!-- <mat-card-subtitle> {{ transporter.id_transporter }} </mat-card-subtitle> -->
+            <mat-card-content  id="transporter_details_content">
+                <div>
+                    <h3> Nom du transpoteur :  </h3>
+                    <p>{{ transporter.name }}</p>  
+                </div>
+                <div>
+                    <h3> Adresse du transporteur : </h3>
+                    <p>{{ transporter.adress }}</p>  
+                </div>
+                <div>
+                    <h3> Email du transporteur :  </h3>
+                    <p>{{ transporter.email }}</p>  
+                </div>
+                <div>
+                    <h3> Numéro de contact :  </h3>
+                    <p>{{ transporter.phoneNumber }}</p>  
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
+            </mat-card-actions>
+        </mat-card>
+        <mat-card>
+            <mat-card-title  id="transporter_change_title">
+                <h1> Modifier les détails du transporter.</h1>
+                <hr>
+            </mat-card-title>>
+            <mat-card-content id="transporter_change_content">
+                <form [formGroup]="updateTransporterForm"  (ngSubmit)="updateTransporter()">
+                    <mat-form-field appearance="fill" class="name">
+                        <mat-label  for="name" > Nom du transporter :</mat-label>
+                        <input matInput placeholder="name" id="name" formControlName="name" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="adress">
+                        <mat-label  for="adress" >  Adresse du transporteur :</mat-label>
+                        <input matInput placeholder="adress" id="adress" formControlName="adress" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="email">
+                        <mat-label  for="email" > Email transporteur :</mat-label>
+                        <input matInput placeholder="email" id="email" formControlName="email" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="phoneNumber">
+                        <mat-label  for="phoneNumber"> Numéro de transporteur :</mat-label>
+                        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+                    </mat-form-field>
+                    <br>
+                    <button type="submit">Submit</button>          
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>    
 </div>
+
 
 
         <!-- <label for="name">  Nom du transpoteur : </label>

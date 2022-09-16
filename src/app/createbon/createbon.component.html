@@ -1,109 +1,121 @@
-<h1> Création d'un bon livraison. </h1>
-
-<div class="maincontainer" cdkDropListGroup>
-
-    <!-- Liste Initialiser -->
-    <div class="deliverylist"
-        cdkDropList 
-        #deliveriesList="cdkDropList"
-        [cdkDropListData] = "Deliveries"
-        [cdkDropListConnectedTo]="[creationDelList]"
-        (cdkDropListDropped)="drop($event)"
-    >
-        <h1> Liste de livraison </h1>
-        <!-- <div class="search_driver">
-            <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Recherche Transport" >
-        </div> -->
-        <div class="deliveryitem" 
-            *ngFor="let delivery of Deliveries  | filter:searchDelivery" 
-            cdkDrag 
-            [cdkDragData]="delivery"
-        >   
-            <h3> Numero de livraison : {{delivery.numeroDelivery}} </h3>
-            Adresse de livraison : {{ delivery.adress }} || Date de livraison : {{ delivery.dateDelivery |  date:'M/d/yy' }}
+<div id="main"> 
+    <div id="instructions">
+        <h1> Création d'un nouveau bon livraison </h1>
+        <div>  
+            <p> Comment créer un nouveau bon de livraison. </p>
+            <p> Il faut juste glisser les données dans le conteneur "Creation pdf" </p>
+            <p> Instructions: </p>
+            <ol>
+                <li> Mettre les données livraison dans données de livraison </li>
+                <li> Mettre les données transporteur dans données de transporteur </li>
+                <li> Puis cliquer le button "voir pdf" </li>
+            </ol>
         </div>
     </div>
-    
-    <div class="transporterlist" 
-        cdkDropList
-        #transportersList="cdkDropList"
-        [cdkDropListData] = "Transporters"
-        [cdkDropListConnectedTo]="[creationTransList]"
-        (cdkDropListDropped)="drop($event)"
-    >
-        <h1> Liste de Transporteur </h1>
-        <!-- <div class="search_driver">
-            <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transport" >
-        </div> -->
-        <div class="transporteritem" 
-            *ngFor="let transport of Transporters | filter:searchTransport"
-            cdkDrag
+    <div class="maincontainer" cdkDropListGroup>
+
+        <!-- Liste Initialiser -->
+        <div class="deliverylist"
+            cdkDropList 
+            #deliveriesList="cdkDropList"
+            [cdkDropListData] = "Deliveries"
+            [cdkDropListConnectedTo]="[creationDelList]"
+            (cdkDropListDropped)="drop($event)"
         >
-            <h3> Chauffeur n° {{ transport.id_transporter }} </h3>
-            Transporteur: {{ transport.name }} ||  Téléphone : {{ transport.phoneNumber }}
-        </div>
-    </div>
-
-    <mat-card class="bon_card">
-        <mat-card-header>
-          <mat-card-title> Creation du PDF </mat-card-title>
-          <mat-card-subtitle> Ajouter les informations. </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>   
-            <!-- Liste Création d'un bon de livraison -->
-            <div class="mainCreateContainer">
-                <!-- <h1> Creation container </h1>
-                <h3> Ajouter les informations. </h3> -->
-                <div class="deliveryBonContainer">
-                    <div
-                        cdkDropList
-                        #creationDelList="cdkDropList"
-                        [cdkDropListData] = "listBonDelivery"
-                        class="del-list"
-                        (cdkDropListDropped)="dropIdDel($event)"
-                        >   
-                        <h1> Données de Livraison </h1>
-                        <div class="bon-item" *ngFor="let itemDel of listBonDelivery" cdkDrag>
-                            <div>
-                              {{ itemDel.numeroDelivery }}  
-                            </div>
-                            <div>
-                                {{ itemDel.adress }}  
-                            </div>   
-                            <div>
-                                {{ itemDel.dateDelivery }}
-                            </div>
-                            <div>
-                               {{ itemDel.remarks }}
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-                <div class="transporterBonContainer" >
-                    <div
-                        cdkDropList
-                        #creationTransList="cdkDropList"
-                        [cdkDropListData] = "listBonTransporter"
-                        class="trans-list"
-                        (cdkDropListDropped)="dropIdTrans($event)"
-                    >   
-                        <h1> Données du transporteur </h1>
-                        <div class="trans-item" *ngFor="let itemTrans of listBonTransporter" cdkDrag>
-                            <div>
-                                {{ itemTrans.name }}
-                            </div>
-                            <div>
-                               Téléphone : {{ itemTrans.phoneNumber }}  
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+            <h1> Liste de livraison </h1>
+            <!-- <div class="search_driver">
+                <input type="text" name="search" [(ngModel)]="searchDelivery" placeholder="Recherche Transport" >
+            </div> -->
+            <div class="deliveryitem" 
+                *ngFor="let delivery of Deliveries  | filter:searchDelivery" 
+                cdkDrag 
+                [cdkDragData]="delivery"
+            >   
+                <h3> Numero de livraison : {{delivery.numeroDelivery}} </h3>
+                Adresse de livraison : {{ delivery.adress }} || Date de livraison : {{ delivery.dateDelivery |  date:'M/d/yy' }}
             </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <!-- <button mat-button color="accent"> <a [routerLink]="['/detailsbon/'+itemDel.id_delivery]" > Voir Pdf </a> </button> -->
-            <button id="go_button" mat-button color="accent"> <a [routerLink]="['/detailsbon/',dataDelivery.id_delivery,dataTransporter.id_transporter]" [queryParams]="{ idd: dataDelivery.id_delivery ,idt: dataTransporter.id_transporter }"> Voir Pdf </a> </button>
-        </mat-card-actions>
-    </mat-card>
-      
+        </div>
+        
+        <div class="transporterlist" 
+            cdkDropList
+            #transportersList="cdkDropList"
+            [cdkDropListData] = "Transporters"
+            [cdkDropListConnectedTo]="[creationTransList]"
+            (cdkDropListDropped)="drop($event)"
+        >
+            <h1> Liste de Transporteur </h1>
+            <!-- <div class="search_driver">
+                <input type="text" name="search" [(ngModel)]="searchTransport" placeholder="Recherche Transport" >
+            </div> -->
+            <div class="transporteritem" 
+                *ngFor="let transport of Transporters | filter:searchTransport"
+                cdkDrag
+            >
+                <h3> Chauffeur n° {{ transport.id_transporter }} </h3>
+                Transporteur: {{ transport.name }} ||  Téléphone : {{ transport.phoneNumber }}
+            </div>
+        </div>
+
+        <mat-card class="bon_card">
+            <mat-card-header>
+            <mat-card-title> Creation du PDF </mat-card-title>
+            <mat-card-subtitle> Ajouter les informations. </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>   
+                <!-- Liste Création d'un bon de livraison -->
+                <div class="mainCreateContainer">
+                    <!-- <h1> Creation container </h1>
+                    <h3> Ajouter les informations. </h3> -->
+                    <div class="deliveryBonContainer">
+                        <div
+                            cdkDropList
+                            #creationDelList="cdkDropList"
+                            [cdkDropListData] = "listBonDelivery"
+                            class="del-list"
+                            (cdkDropListDropped)="dropIdDel($event)"
+                            >   
+                            <h1> Données de Livraison </h1>
+                            <div class="bon-item" *ngFor="let itemDel of listBonDelivery" cdkDrag>
+                                <div>
+                                {{ itemDel.numeroDelivery }}  
+                                </div>
+                                <div>
+                                    {{ itemDel.adress }}  
+                                </div>   
+                                <div>
+                                    {{ itemDel.dateDelivery }}
+                                </div>
+                                <div>
+                                {{ itemDel.remarks }}
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="transporterBonContainer" >
+                        <div
+                            cdkDropList
+                            #creationTransList="cdkDropList"
+                            [cdkDropListData] = "listBonTransporter"
+                            class="trans-list"
+                            (cdkDropListDropped)="dropIdTrans($event)"
+                        >   
+                            <h1> Données du transporteur </h1>
+                            <div class="trans-item" *ngFor="let itemTrans of listBonTransporter" cdkDrag>
+                                <div>
+                                    {{ itemTrans.name }}
+                                </div>
+                                <div>
+                                Téléphone : {{ itemTrans.phoneNumber }}  
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-button color="accent"> <a [routerLink]="['/detailsbon/'+itemDel.id_delivery]" > Voir Pdf </a> </button> -->
+                <button id="go_button" mat-button color="accent"> <a [routerLink]="['/detailsbon/',dataDelivery.id_delivery,dataTransporter.id_transporter]" [queryParams]="{ idd: dataDelivery.id_delivery ,idt: dataTransporter.id_transporter }"> Voir Pdf </a> </button>
+            </mat-card-actions>
+        </mat-card> 
+    </div>
 </div>

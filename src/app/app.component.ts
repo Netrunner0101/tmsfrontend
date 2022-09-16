@@ -13,20 +13,23 @@ export class AppComponent {
   title = 'tmsfront2';
 
   check = false;
+
+  connectValue = false ;
   
   constructor(private _router:Router, private authService:AuthenticationService) {}
 
   ngOnInit(): void {
-
     this.check = this.authService.checkifToken();
-
+    // console.log(sessionStorage.getItem('token'));
+    if(this.check == true ){
+      this.connectValue = true;
+    }
   }
 
   disconnect(){
     this.authService.logout();
   }
 
-  
 }
 
 

@@ -1,54 +1,55 @@
-
-<div class="container custom-container-2">
-  <!-- Show it when there is no employee -->
-  <div class="no-data text-center" *ngIf="Customers.length == 0">
-    <p> Il y a aucun clients .</p>
-    <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
-      Add Empoyee
-    </button> -->
-  </div>
-  <!-- Employees list table, it hides when there is no employee -->
-  <div *ngIf="Customers.length !== 0">
-    <h1 class="mb-3 text-center"> Liste Client </h1>
-    <div class="col-md-12">
-      <div class="search_customer">
-        Recherche : 
-        <input type="text" name="search" [(ngModel)]="searchCustomer" placeholder="Recherche client" >
+<div id="main">
+  <div class="container custom-container-2">
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Customers.length == 0">
+      <p> Il y a aucun clients .</p>
+      <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
+        Add Empoyee
+      </button> -->
+    </div>
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Customers.length !== 0">
+      <h1 class="mb-3 text-center"> Liste Client </h1>
+      <div class="col-md-12">
+        <div class="search_customer">
+          Recherche : 
+          <input type="text" name="search" [(ngModel)]="searchCustomer" placeholder="Recherche client" >
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <!-- <th scope="col"> Id customer </th> -->
+              <th scope="col">Name</th>
+              <th scope="col">vat</th>
+              <th scope="col">Adresse</th>
+              <th scope="col">Email</th>
+              <th scope="col">Telephone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of Customers | filter:searchCustomer">
+              <!-- <td>{{ customer.id_customer}}</td> -->
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.vat}}</td>
+              <td>{{ customer.adress}}</td>
+              <td>{{ customer.email }}</td>
+              <td>{{ customer.phoneNumber }}</td>
+              <td>
+                <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
+                  >Edit
+                </span> -->
+                  <button type="button" mat-button (click)='deleteCustomer(customer.id_customer)' matTooltip="Supprimer"> <mat-icon>delete_outline</mat-icon> supprimer</button>
+                  <button mat-button><a  [routerLink]="['/customer/',customer.id_customer]" [queryParams]="{ idc:customer.id_customer }"matTooltip="Détail Client"> <mat-icon>description</mat-icon></a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <!-- <th scope="col"> Id customer </th> -->
-            <th scope="col">Name</th>
-            <th scope="col">vat</th>
-            <th scope="col">Adresse</th>
-            <th scope="col">Email</th>
-            <th scope="col">Telephone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let customer of Customers | filter:searchCustomer">
-            <!-- <td>{{ customer.id_customer}}</td> -->
-            <td>{{ customer.name }}</td>
-            <td>{{ customer.vat}}</td>
-            <td>{{ customer.adress}}</td>
-            <td>{{ customer.email }}</td>
-            <td>{{ customer.phoneNumber }}</td>
-            <td>
-              <!-- <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
-                >Edit
-              </span> -->
-                <button type="button" mat-button (click)='deleteCustomer(customer.id_customer)' matTooltip="Supprimer"> <mat-icon>delete_outline</mat-icon> supprimer</button>
-                <button mat-button><a  [routerLink]="['/customer/',customer.id_customer]" [queryParams]="{ idc:customer.id_customer }"matTooltip="Détail Client"> <mat-icon>description</mat-icon></a></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
-</div>
 
-<div>
-  <button mat-button><a  [routerLink]="['/create/customer']"> <mat-icon  type="button">create</mat-icon> Nouveau client </a></button>
-  <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  <div>
+    <button mat-button><a  [routerLink]="['/create/customer']"> <mat-icon  type="button">create</mat-icon> Nouveau client </a></button>
+    <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  </div>
 </div>

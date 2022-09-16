@@ -13,6 +13,8 @@ export class AuthenticationService {
 
   // url = 'https://localhost:7233';
 
+  flag = false;
+
   token ='';
 
   constructor(private http: HttpClient, private router:Router) { }

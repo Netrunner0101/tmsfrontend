@@ -1,48 +1,48 @@
-
-<div class="container custom-container-2">
-  <!-- Show it when there is no employee -->
-  <div class="no-data text-center" *ngIf="Drivers.length == 0">
-    <p> Il y a aucun chauffeur .</p>
-    <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
-      Add Empoyee
-    </button> -->
-  </div>
-  <!-- Employees list table, it hides when there is no employee -->
-  <div *ngIf="Drivers.length !== 0">
-    <h1 class="mb-3 text-center">Liste des Chauffeurs </h1>
-    <div class="col-md-12">
-      <div class="search_driver">
-        Recherche : 
-        <input type="text" name="search" [(ngModel)]="searchDriver" placeholder="Recherche Chauffeur" >
+<div id="main">
+  <div class="container custom-container-2">
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Drivers.length == 0">
+      <p> Il y a aucun chauffeur .</p>
+      <!-- <button class="btn btn-outline-primary" routerLink="/create-employee">
+        Add Empoyee
+      </button> -->
+    </div>
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Drivers.length !== 0">
+      <h1 class="mb-3 text-center">Liste des Chauffeurs </h1>
+      <div class="col-md-12">
+        <div class="search_driver">
+          Recherche : 
+          <input type="text" name="search" [(ngModel)]="searchDriver" placeholder="Recherche Chauffeur" >
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <!-- <th scope="col"> Id driver </th> -->
+              <th scope="col"> Nom du chauffeur </th>
+              <th scope="col"> Email du chauffeur : </th>
+              <th scope="col"> Numéro de téléphone du chauffeur : </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let driver of Drivers | filter:searchDriver">
+              <!-- <td>{{ driver.id_drive}}</td> -->
+              <td>{{ driver.name }}</td>
+              <td>{{ driver.email }}</td>
+              <td>{{ driver.phoneNumber }}</td>
+              <td>
+                  <button type="button" mat-button (click)='deleteDriver(driver.id_drive)' matTooltip="Supprimer"> <mat-icon>delete_outline</mat-icon> supprimer </button>
+                  <button mat-button><a [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"matTooltip="Détail Chauffeur"> <mat-icon>description</mat-icon> </a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <!-- <th scope="col"> Id driver </th> -->
-            <th scope="col"> Nom du chauffeur </th>
-            <th scope="col"> Email du chauffeur : </th>
-            <th scope="col"> Numéro de téléphone du chauffeur : </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let driver of Drivers | filter:searchDriver">
-            <!-- <td>{{ driver.id_drive}}</td> -->
-            <td>{{ driver.name }}</td>
-            <td>{{ driver.email }}</td>
-            <td>{{ driver.phoneNumber }}</td>
-            <td>
-                <button type="button" mat-button (click)='deleteDriver(driver.id_drive)' matTooltip="Supprimer"> <mat-icon>delete_outline</mat-icon> supprimer </button>
-                <button mat-button><a [routerLink]="['/driver/',driver.id_drive]" [queryParams]="{ iddriver:driver.id_drive }"matTooltip="Détail Chauffeur"> <mat-icon>description</mat-icon> </a></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
-</div>
 
-<div>
-  <button mat-button><a [routerLink]="['/create/driver']"> <mat-icon>create</mat-icon>  Nouveau chauffeur </a></button>
-  <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  <div>
+    <button mat-button><a [routerLink]="['/create/driver']"> <mat-icon>create</mat-icon>  Nouveau chauffeur </a></button>
+    <button mat-button (click)="exportExcel()" > <mat-icon> import_export</mat-icon>  Générer un Excel </button>
+  </div>
 </div>
-   

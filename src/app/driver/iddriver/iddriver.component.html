@@ -1,56 +1,59 @@
-<button id="return" mat-button > <a [routerLink]="['/driver']">Retour</a></button>
-<div style="display: flex; flex-grow: grow">
-    <mat-card *ngIf="driver" class="example-card" id="driverDetail">
-        <mat-card-title id="driver_details_title"> 
-            <h1> Details Du chauffeur </h1> 
-            <hr>
-        </mat-card-title>
-        <!-- <mat-card-subtitle> {{ driver.id_drive }} </mat-card-subtitle> -->
-        <mat-card-content id="driver_details_content">
-            <div>
-                <h3> Nom du chauffeur :  </h3>
-                <p>{{ driver.name }}</p>  
-            </div>
-            <div>
-                <h3> Email du chauffeur :  </h3>
-                <p>{{ driver.email }}</p>  
-            </div>
-            <div>
-                <h3> Numéro de téléphone du chauffeur : </h3>
-                <p>{{ driver.phoneNumber }}</p>  
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
-        </mat-card-actions>
-    </mat-card>
-    <mat-card>
-        <mat-card-title id="driver_change_title">
-            <h1> Modifier les détails du chauffeur </h1>
-            <hr>
-        </mat-card-title>
-        <mat-card-content id="driver_change_content">
-            <form [formGroup]="updateDriverForm"  (ngSubmit)="updateDriver()">        
-                <mat-form-field appearance="fill" class="name">
-                    <mat-label  for="name" >  Nom du chauffeur :</mat-label>
-                    <input matInput placeholder="name" id="name" formControlName="name" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="email">
-                    <mat-label  for="email" >  Email :</mat-label>
-                    <input matInput placeholder="email" id="email" formControlName="email" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="phoneNumber">
-                    <mat-label  for="phoneNumber" > mot de passe :</mat-label>
-                    <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
-                </mat-form-field>
-                <br>
-                <button type="submit">Submit</button>
-            </form>
-        </mat-card-content>
-    </mat-card>
+<div id="main">
+    <button id="return" mat-button > <a [routerLink]="['/driver']">Retour</a></button>
+    <div style="display: flex; flex-grow: grow">
+        <mat-card *ngIf="driver" class="example-card" id="driverDetail">
+            <mat-card-title id="driver_details_title"> 
+                <h1> Details Du chauffeur </h1> 
+                <hr>
+            </mat-card-title>
+            <!-- <mat-card-subtitle> {{ driver.id_drive }} </mat-card-subtitle> -->
+            <mat-card-content id="driver_details_content">
+                <div>
+                    <h3> Nom du chauffeur :  </h3>
+                    <p>{{ driver.name }}</p>  
+                </div>
+                <div>
+                    <h3> Email du chauffeur :  </h3>
+                    <p>{{ driver.email }}</p>  
+                </div>
+                <div>
+                    <h3> Numéro de téléphone du chauffeur : </h3>
+                    <p>{{ driver.phoneNumber }}</p>  
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
+            </mat-card-actions>
+        </mat-card>
+        <mat-card>
+            <mat-card-title id="driver_change_title">
+                <h1> Modifier les détails du chauffeur </h1>
+                <hr>
+            </mat-card-title>
+            <mat-card-content id="driver_change_content">
+                <form [formGroup]="updateDriverForm"  (ngSubmit)="updateDriver()">        
+                    <mat-form-field appearance="fill" class="name">
+                        <mat-label  for="name" >  Nom du chauffeur :</mat-label>
+                        <input matInput placeholder="name" id="name" formControlName="name" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="email">
+                        <mat-label  for="email" >  Email :</mat-label>
+                        <input matInput placeholder="email" id="email" formControlName="email" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="phoneNumber">
+                        <mat-label  for="phoneNumber" > mot de passe :</mat-label>
+                        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+                    </mat-form-field>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
+
 
 
         <!--     

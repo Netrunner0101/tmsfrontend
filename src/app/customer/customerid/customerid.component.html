@@ -1,74 +1,77 @@
-<button mat-button > <a [routerLink]="['/customer']">Retour</a></button>
-<div style="display: flex; flex-grow: grow">
-    <mat-card *ngIf="customer" class="example-card" id="customerDetail">
-        <mat-card-title id="customer_details_title"> 
-            <h1> Client details </h1> 
-            <hr>
-        </mat-card-title>
-        <!-- <mat-card-subtitle> {{ customer.id_customer }} </mat-card-subtitle> -->
-        <mat-card-content id="customer_detais_content">
-            <div>
-                <h3> Nom :  </h3>
-                <p>{{ customer.name }}</p>  
-            </div>
-            <div>
-                <h3> Adresse :  </h3>
-                <p>{{ customer.adress }}</p>  
-            </div>
-            <div>
-                <h3> Numéro Tva :  </h3>
-                <p>{{ customer.vat }}</p>  
-            </div>
-            <div>
-                <h3> Email :  </h3>
-                <p>{{ customer.email }}</p>  
-            </div>
-            <div>
-                <h3> Téléhpone :  </h3>
-                <p>{{ customer.phoneNumber }}</p>  
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
-        </mat-card-actions>
-    </mat-card>
-    <mat-card>
-        <mat-card-title id="customer_change_title">
-            <h1> Modifier les détails </h1>
-            <hr>
-        </mat-card-title>
-        <mat-card-content id="customer_change_content">
-            <form [formGroup]="updateCustomerForm"  (ngSubmit)="updateCustomer()">
-                <mat-form-field appearance="fill" class="name">
-                    <mat-label  for="name" >  Nom du Client :</mat-label>
-                    <input matInput placeholder="name" id="name" formControlName="name" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="vat">
-                    <mat-label for="vat"> Tva Client :</mat-label>
-                    <input matInput placeholder="vat" id="vat" formControlName="vat" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="adress">
-                    <mat-label  for="adress"> Adresse Client :</mat-label>
-                    <input matInput placeholder="adress" id="adress" formControlName="adress" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="email">
-                    <mat-label  for="email" > Email Client :</mat-label>
-                    <input matInput placeholder="email" id="email" formControlName="email" />
-                </mat-form-field>
-                <br>
-                <mat-form-field appearance="fill" class="phoneNumber">
-                    <mat-label  for="phoneNumber"> Numéro Téléphone :</mat-label>
-                    <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
-                </mat-form-field>
-                <br>
-                <button type="submit">Submit</button>
-            </form>
-        </mat-card-content>
-    </mat-card>
+<div id="main">
+    <button mat-button > <a [routerLink]="['/customer']">Retour</a></button>
+    <div style="display: flex; flex-grow: grow">
+        <mat-card *ngIf="customer" class="example-card" id="customerDetail">
+            <mat-card-title id="customer_details_title"> 
+                <h1> Client details </h1> 
+                <hr>
+            </mat-card-title>
+            <!-- <mat-card-subtitle> {{ customer.id_customer }} </mat-card-subtitle> -->
+            <mat-card-content id="customer_detais_content">
+                <div>
+                    <h3> Nom :  </h3>
+                    <p>{{ customer.name }}</p>  
+                </div>
+                <div>
+                    <h3> Adresse :  </h3>
+                    <p>{{ customer.adress }}</p>  
+                </div>
+                <div>
+                    <h3> Numéro Tva :  </h3>
+                    <p>{{ customer.vat }}</p>  
+                </div>
+                <div>
+                    <h3> Email :  </h3>
+                    <p>{{ customer.email }}</p>  
+                </div>
+                <div>
+                    <h3> Téléhpone :  </h3>
+                    <p>{{ customer.phoneNumber }}</p>  
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-button (click)="createPdf()" > Génerer un PDF </button> -->
+            </mat-card-actions>
+        </mat-card>
+        <mat-card>
+            <mat-card-title id="customer_change_title">
+                <h1> Modifier les détails </h1>
+                <hr>
+            </mat-card-title>
+            <mat-card-content id="customer_change_content">
+                <form [formGroup]="updateCustomerForm"  (ngSubmit)="updateCustomer()">
+                    <mat-form-field appearance="fill" class="name">
+                        <mat-label  for="name" >  Nom du Client :</mat-label>
+                        <input matInput placeholder="name" id="name" formControlName="name" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="vat">
+                        <mat-label for="vat"> Tva Client :</mat-label>
+                        <input matInput placeholder="vat" id="vat" formControlName="vat" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="adress">
+                        <mat-label  for="adress"> Adresse Client :</mat-label>
+                        <input matInput placeholder="adress" id="adress" formControlName="adress" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="email">
+                        <mat-label  for="email" > Email Client :</mat-label>
+                        <input matInput placeholder="email" id="email" formControlName="email" />
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill" class="phoneNumber">
+                        <mat-label  for="phoneNumber"> Numéro Téléphone :</mat-label>
+                        <input matInput placeholder="phoneNumber" id="phoneNumber" formControlName="phoneNumber" />
+                    </mat-form-field>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>    
 </div>
+
 
 
         <!-- <label for="name"> Nom: </label>
