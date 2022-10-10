@@ -7,9 +7,12 @@
             <input matInput placeholder="Email" id="email" formControlName="email" />
         </mat-form-field>
         <br>
-        <mat-form-field class="password">
+        <mat-form-field  class="password">
             <mat-label  for="password" > mot de passe :</mat-label>
-            <input matInput placeholder="mot de passe" id="password" formControlName="password" />
+            <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="mot de passe" id="password" formControlName="password" />
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                {{showPassword?'visibility_off':'visibility'}}
+            </mat-icon>
         </mat-form-field>
         <br>
         <div class="button-wrapper">

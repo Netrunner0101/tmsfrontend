@@ -11,6 +11,11 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+  public showPassword: boolean = false;
+  
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 
   constructor(private authService:AuthenticationService, private _router : Router) { }
 
